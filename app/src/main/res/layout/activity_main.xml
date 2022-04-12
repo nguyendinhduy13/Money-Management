@@ -5,17 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple_200"
+    android:gravity="center"
     tools:context=".MainActivity">
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:id="@+id/viewpaper"
         />
+
     <me.relex.circleindicator.CircleIndicator
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
         android:id="@+id/circle_indicator"
+        android:layout_width="49dp"
+        android:layout_height="46dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_v1"
+        android:textAlignment="center"
+        android:text="Được toàn quyền kiểm soát tiền của bạn"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/text_v2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trở thành người quản lý tiền của bạn và chi tiêu hợp lý"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/btn_dangnhap"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="343dp"
+        android:layout_height="56dp"
+        android:background="@drawable/botron_button"
+        android:padding="4dp"
+        android:text="Đăng Nhập"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        />
+    <Button
+        android:id="@+id/btn_dangky"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="343dp"
+        android:layout_height="56dp"
+        android:background="@drawable/botron_button"
+        android:padding="4dp"
+        android:text="Đăng Ký"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        />
 </LinearLayout>

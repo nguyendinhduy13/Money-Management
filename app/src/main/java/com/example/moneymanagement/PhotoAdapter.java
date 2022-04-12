@@ -18,6 +18,7 @@ public class PhotoAdapter extends PagerAdapter {
     private Context mContext;
     private List<Photo> mListPhoto;
 
+
     public PhotoAdapter(Context mContext,List<Photo> mListPhoto) {
 
         this.mContext = mContext;
