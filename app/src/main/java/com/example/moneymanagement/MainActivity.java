@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +22,22 @@ public class MainActivity extends AppCompatActivity {
     private PhotoAdapter photoAdapter;
     private List<Photo> mListPhoto;
     private Timer mTimer;
+    private Button btnLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager=findViewById(R.id.viewpaper);
         circleIndicator=findViewById(R.id.circle_indicator);
+        btnLogin = findViewById(R.id.btn_dangnhap);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_home);
+            }
+        });
+
         mListPhoto=getListPhoto();
         photoAdapter=new PhotoAdapter(this,mListPhoto);
         viewPager.setAdapter(photoAdapter);
