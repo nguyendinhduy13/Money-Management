@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="30dp"
+        android:text="Đăng nhập"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <Button
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="-40dp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        style="?android:attr/borderlessButtonStyle"
+        tools:ignore="SpeakableTextPresentCheck"></Button>
+
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_round" />
+    <EditText
+        android:id="@+id/Pass"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_round"/>
+
+
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/edit_round"
+        android:text="Đăng nhập"
+        android:layout_height="wrap_content"></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Quên mật khẩu"
+        android:layout_marginLeft="130dp"
+        android:textColor="@color/purple_200"
+        style="?android:attr/borderlessButtonStyle"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Bạn chưa có tài khoản? Đăng ký"
+        android:layout_marginLeft="60dp"
+        android:textColor="#808080"
+        style="?android:attr/borderlessButtonStyle"></Button>
+</LinearLayout>
