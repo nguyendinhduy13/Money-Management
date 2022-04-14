@@ -36,10 +36,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private List<Photo> getListPhoto(){
         List<Photo> list=new ArrayList<>();
-        list.add(new Photo(R.drawable.image1));
-        list.add(new Photo(R.drawable.image2));
-        list.add(new Photo(R.drawable.image3));
-        list.add(new Photo(R.drawable.image4));
+        list.add(new Photo(R.drawable.welcome1));
+        list.add(new Photo(R.drawable.welcome2));
+        list.add(new Photo(R.drawable.welcome3));
         return list;
     }
     private void autoSlideImage(){

@@ -44,16 +44,15 @@
 
     <Button
         android:id="@+id/btn_dangnhap"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
         android:layout_width="343dp"
         android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/botron_button"
         android:padding="4dp"
         android:text="Đăng Nhập"
-        android:textStyle="bold"
         android:textSize="18dp"
-        />
+        android:textStyle="bold" />
     <Button
         android:id="@+id/btn_dangky"
         android:layout_marginTop="5dp"
