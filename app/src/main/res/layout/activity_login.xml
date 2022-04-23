@@ -25,7 +25,7 @@
 
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/email"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -37,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_round" />
     <EditText
-        android:id="@+id/Pass"
+        android:id="@+id/password"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -52,6 +52,7 @@
 
 
     <Button
+        android:id="@+id/loginBtn"
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_marginLeft="50dp"
@@ -68,6 +69,7 @@
         android:textColor="@color/purple_200"
         style="?android:attr/borderlessButtonStyle"></Button>
     <Button
+        android:id="@+id/LoginQn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
