@@ -3,6 +3,7 @@ package com.example.moneymanagement;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -35,13 +36,15 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.activity_login);
+                Intent intent =new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         });
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.activity_registration);
+                Intent intent =new Intent(MainActivity.this,RegistrationActivity.class);
+                startActivity(intent);
             }
         });
 
