@@ -22,19 +22,26 @@ public class MainActivity extends AppCompatActivity {
     private PhotoAdapter photoAdapter;
     private List<Photo> mListPhoto;
     private Timer mTimer;
-    private Button btnLogin;
+    private Button btnLogin,btnRegister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager=findViewById(R.id.viewpaper);
         circleIndicator=findViewById(R.id.circle_indicator);
-        btnLogin = findViewById(R.id.btn_dangnhap);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.activity_home);
+                setContentView(R.layout.activity_login);
+            }
+        });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_registration);
             }
         });
 

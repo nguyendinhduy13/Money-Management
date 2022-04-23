@@ -43,7 +43,7 @@
         />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_dangnhap"
+        android:id="@+id/btnLogin"
         android:layout_width="340dp"
         android:layout_height="60dp"
         app:cornerRadius="16dp"
@@ -54,7 +54,7 @@
 
         />
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_dangky"
+        android:id="@+id/btnRegister"
         android:layout_width="340dp"
         android:layout_height="60dp"
         app:cornerRadius="16dp"
