@@ -7,11 +7,12 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity">
+
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpaper"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:id="@+id/viewpaper"
-        />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <me.relex.circleindicator.CircleIndicator
         android:id="@+id/circle_indicator"

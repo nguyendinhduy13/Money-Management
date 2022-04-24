@@ -8,17 +8,19 @@
         <entry key="..\:/MoneyManagement/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/MoneyManagement/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/MoneyManagement/app/src/main/res/layout/itemphoto.xml" value="0.1" />
-<<<<<<< HEAD
-        <entry key="..\:/Project/Money-Management/app/src/main/res/layout/activity_home.xml" value="0.2264151024877837" />
-        <entry key="..\:/Project/Money-Management/app/src/main/res/layout/activity_main.xml" value="0.2105978260869565" />
-=======
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/drawable-v24/edit_round.xml" value="0.16" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1695" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/drawable/botron_button.xml" value="0.16" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/drawable/edit_round_layout.xml" value="0.1695" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/drawable/edit_round_spinner.xml" value="0.132" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/activity_expense.xml" value="0.215625" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/activity_registration.xml" value="0.215625" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/itemphoto.xml" value="0.25" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Money-Management/app/src/main/res/layout/register.xml" value="0.22" />
->>>>>>> 899fd00ac6abd9b75b950c1f599c2bfce44f642b
       </map>
     </option>
   </component>
