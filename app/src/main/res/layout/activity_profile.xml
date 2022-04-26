@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="162dp"
+        android:background="@color/teal_200"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="35dp"
+            >
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/layout_avt" />
+
+            <TextView
+                android:id="@+id/tv_ttk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="25dp"
+                android:text="Tên tài khoản"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="46dp"
+                android:text="Vũ Viết Huy"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/teal_200"
+                android:src="@drawable/ic_pencil" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/layout_bg_setting"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_tai_khoan"
+            android:layout_width="360dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/ic_cost_figma"></LinearLayout>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingRight="100dp"
+                android:text="Tài Khoản"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_cai_dat"
+            android:layout_width="360dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/linear_tai_khoan"
+            >
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/ic_setting_figma">
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingRight="100dp"
+                android:text="Cài Đặt"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_xuat"
+            android:layout_width="360dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/linear_cai_dat"
+            >
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/ic_forward_figma">
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingRight="100dp"
+                android:text="Xuất dữ liệu"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_dang_xuat"
+            android:layout_width="360dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/linear_xuat"
+            >
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/ic_logout_figma">
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingRight="100dp"
+                android:text="Đăng Xuất"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

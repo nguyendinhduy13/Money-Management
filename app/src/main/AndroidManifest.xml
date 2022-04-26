@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyManagement">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Financial_Report_Income"
+            android:exported="false" />
+        <activity
             android:name=".Expense"
             android:exported="false" />
         <activity

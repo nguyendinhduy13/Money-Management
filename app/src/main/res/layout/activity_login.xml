@@ -58,7 +58,9 @@
         android:layout_marginLeft="50dp"
         android:background="@drawable/edit_round"
         android:text="Đăng nhập"
-        android:layout_height="wrap_content"></Button>
+        android:layout_height="wrap_content">
+
+    </Button>
 
     <Button
         android:layout_width="wrap_content"
@@ -67,7 +69,9 @@
         android:text="Quên mật khẩu"
         android:layout_marginLeft="130dp"
         android:textColor="@color/purple_200"
-        style="?android:attr/borderlessButtonStyle"></Button>
+        style="?android:attr/borderlessButtonStyle">
+
+    </Button>
     <Button
         android:id="@+id/LoginQn"
         android:layout_width="wrap_content"
@@ -76,5 +80,7 @@
         android:text="Bạn chưa có tài khoản? Đăng ký"
         android:layout_marginLeft="60dp"
         android:textColor="#808080"
-        style="?android:attr/borderlessButtonStyle"></Button>
+        style="?android:attr/borderlessButtonStyle">
+
+    </Button>
 </LinearLayout>
