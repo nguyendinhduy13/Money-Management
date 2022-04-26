@@ -41,19 +41,41 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"></TextView>
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/edit_round_layout"
         android:orientation="vertical">
-        <Spinner
-            android:id="@+id/itemsspinner"
-            android:layout_width="300dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:hint="Danh mục"
+              style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/filled_exposed"
+                android:inputType="none"></AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+<EditText
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+   android:hint="Mô tả"
+    android:background="@drawable/edit_round"
+    android:layout_margin="20dp"
+    android:padding="20dp"
+    android:inputType="text"
+    android:textSize="18dp"></EditText>
 
-            android:entries="@array/items"
-            android:gravity="center"
-           ></Spinner>
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="120dp"
+            android:textSize="17dp"
+            android:background="@drawable/edit_round"
+            android:text="Tiếp tục"></Button>
 
     </LinearLayout>
 
