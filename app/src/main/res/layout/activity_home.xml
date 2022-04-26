@@ -1,71 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/top_layout"
+        android:layout_height="350dp"
         android:orientation="vertical"
+        android:background="@drawable/layout_bolinearcolor"
+        >
+        <Spinner
+            android:id="@+id/spinner_month"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="110dp"
+            />
 
-        >
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Welcome Home">
-        </TextView>
-    </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+            android:layout_height="wrap_content"
+            android:text="Số dư tài khoản"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_sodu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$500"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginRight="10dp"/>
+
         <LinearLayout
-            android:id="@+id/bottom_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:background="@drawable/layout_bg"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintVertical_weight="50">
-            <RelativeLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_marginLeft="20dp"
+            >
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#dedede"
-                android:orientation="vertical"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                >
+                android:text="Thu nhập"
+                android:textColor="@color/white"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="15dp"/>
 
-                <TextView
-                    android:id="@+id/item_category"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Top expenses: "
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-            </RelativeLayout>
-
-            <ListView
-                android:id="@+id/favourite_categories_list_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:clipToPadding="false"
-                android:paddingBottom="200dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_thunhap"
+                android:layout_width="80dp"
+                android:layout_height="45dp"
+                android:text="$500"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:layout_marginLeft="65dp"
+                android:textColor="@color/white" />
+            <ImageButton
+                android:id="@+id/btnthunhap"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-60dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/layout_botron"
+                android:src="@drawable/thunhap"
+                />
         </LinearLayout>
-    </ScrollView>
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:background="@drawable/layout_corner_red"
+            android:orientation="vertical"
+            android:layout_marginLeft="216dp"
+            android:layout_marginTop="-90dp"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chi phí"
+                android:textColor="@color/white"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_chiphi"
+                android:layout_width="80dp"
+                android:layout_height="45dp"
+                android:text="$500"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:layout_marginLeft="70dp"
+                android:textColor="@color/white" />
+            <ImageButton
+                android:id="@+id/btnchiphi"
+                android:layout_width="43dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-60dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/layout_botron"
+                android:src="@drawable/chiphi"
+                />
+        </LinearLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tần suất chi tiêu"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            >
+            <TableRow>
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hôm nay"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="30dp"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tuần"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="70dp"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tháng"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="70dp"
+                    />
+            </TableRow>
+            <TableRow>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/moneytoday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$500"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="30dp"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/moneyweek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$500"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="70dp"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/moneymonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$500"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="70dp"
+                    />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giao dịch gần đây"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/listexpense"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Xem tất cả"
+        android:textSize="10dp"
+        app:cornerRadius="10dp"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/purple_700"
+        android:layout_marginLeft="290dp"
+        android:textStyle="bold"
+        android:layout_marginTop="-32dp"
+        />
 </LinearLayout>
