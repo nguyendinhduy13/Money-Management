@@ -7,14 +7,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 public class Expense extends AppCompatActivity {
-String [] myList;
+    String [] myList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense);
         myList= getResources().getStringArray(R.array.items);
         ArrayAdapter<String> adapter=new ArrayAdapter<>(this,R.layout.drop_down_item,myList);
-        AutoCompleteTextView autoCompleteTextView=findViewById(R.id.filled_exposed);
+        final AutoCompleteTextView autoCompleteTextView=findViewById(R.id.filled_exposed);
         autoCompleteTextView.setAdapter(adapter);
     }
 }
