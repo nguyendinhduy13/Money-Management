@@ -147,9 +147,10 @@ public class BudgetActivity extends AppCompatActivity {
                     MutableDateTime epoch = new MutableDateTime();
                     epoch.setDate(0);
                     DateTime now = new DateTime();
+                    Weeks weeks=Weeks.weeksBetween(epoch,now);
                     Months months = Months.monthsBetween(epoch, now);
 
-                    Data data = new Data(budgetItem, date, id, null, Integer.parseInt(budgetAmount), months.getMonths());
+                    Data data = new Data(budgetItem, date, id, null, Integer.parseInt(budgetAmount), months.getMonths(),weeks.getWeeks());
 
                     budgetRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -308,10 +309,11 @@ public class BudgetActivity extends AppCompatActivity {
                 MutableDateTime epoch = new MutableDateTime();
                 epoch.setDate(0);
                 DateTime now = new DateTime();
+                Weeks weeks=Weeks.weeksBetween(epoch,now);
                 Months months = Months.monthsBetween(epoch, now);
 
 
-                Data data = new Data(item, date, post_key, null, amount, months.getMonths());
+                Data data = new Data(item, date, post_key, null, amount, months.getMonths(),weeks.getWeeks());
                 budgetRef.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

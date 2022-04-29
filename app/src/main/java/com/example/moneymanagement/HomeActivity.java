@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class HomeActivity extends AppCompatActivity {
 
     private LinearLayout linearNgansach;
-    private TextView tv_homnay,tvthunhap;
+    private TextView tv_homnay,tvthunhap,tv_week;
     private DatabaseReference budgetRef,personalRef;
     private FirebaseAuth mAuth;
     @Override
@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         linearNgansach=findViewById(R.id.linearNgansach);
         tv_homnay=findViewById(R.id.tv_homnay);
+        tv_week=findViewById(R.id.tv_week);
         tvthunhap=findViewById(R.id.tv_thunhap);
         mAuth = FirebaseAuth.getInstance();
         budgetRef= FirebaseDatabase.getInstance().getReference().child("budget").child(mAuth.getCurrentUser().getUid());
@@ -67,6 +68,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,TodaySpendingActivity.class);
+                startActivity(intent);
+            }
+        });
+        tv_week.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,WeekSpendingActivity.class);
                 startActivity(intent);
             }
         });

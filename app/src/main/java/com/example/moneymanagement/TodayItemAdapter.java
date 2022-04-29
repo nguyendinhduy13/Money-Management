@@ -143,7 +143,7 @@ public class TodayItemAdapter extends RecyclerView.Adapter<TodayItemAdapter.View
                 Months months=Months.monthsBetween(epoch,now);
 
 
-                Data data=new Data(item,date,post_key,note,amount,months.getMonths());
+                Data data=new Data(item,date,post_key,note,amount,months.getMonths(),weeks.getWeeks());
 
                 DatabaseReference reference= FirebaseDatabase.getInstance().getReference("expenses").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 reference.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {

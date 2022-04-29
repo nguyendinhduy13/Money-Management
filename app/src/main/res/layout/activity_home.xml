@@ -136,6 +136,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tv_week"
                     android:text="Tuần"
                     android:textColor="@color/black"
                     android:textSize="20dp"
