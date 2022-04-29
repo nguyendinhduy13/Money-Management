@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="total Budget amount: $0"
+        android:text="Tồng ngân sách: $0"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="25sp"
