@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button LoginQn,loginBtn;
+    private Button LoginQn,loginBtn,btn_back;
     private EditText email,password;
 
     private FirebaseAuth mAuth;
@@ -32,6 +32,15 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn=findViewById(R.id.loginBtn);
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
+        btn_back=findViewById(R.id.btn_back);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);

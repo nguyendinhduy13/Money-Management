@@ -21,7 +21,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
-    private Button registerQn,registerBtn;
+    private Button registerQn,registerBtn,btn_back;
     private EditText password,email;
 
     @Override
@@ -34,6 +34,15 @@ public class RegistrationActivity extends AppCompatActivity {
         registerBtn=findViewById(R.id.registerBtn);
         password=findViewById(R.id.password);
         email=findViewById(R.id.email);
+        btn_back=findViewById(R.id.btn_back);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(RegistrationActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mAuth=FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);

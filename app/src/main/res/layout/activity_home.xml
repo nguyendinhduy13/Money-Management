@@ -58,10 +58,10 @@
                 android:id="@+id/tv_thunhap"
                 android:layout_width="80dp"
                 android:layout_height="45dp"
-                android:text="$500"
+                android:text="0$"
                 android:textStyle="bold"
                 android:textSize="30dp"
-                android:layout_marginLeft="65dp"
+                android:layout_marginLeft="69dp"
                 android:textColor="@color/white" />
             <ImageButton
                 android:id="@+id/btnthunhap"
@@ -93,10 +93,10 @@
                 android:id="@+id/tv_chiphi"
                 android:layout_width="80dp"
                 android:layout_height="45dp"
-                android:text="$500"
+                android:text="0$"
                 android:textStyle="bold"
                 android:textSize="30dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="80dp"
                 android:textColor="@color/white" />
             <ImageButton
                 android:id="@+id/btnchiphi"
@@ -130,8 +130,8 @@
                     android:text="Hôm nay"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:id="@+id/todaytv"
                     android:layout_marginLeft="30dp"
+                    android:id="@+id/tv_homnay"
                     />
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
