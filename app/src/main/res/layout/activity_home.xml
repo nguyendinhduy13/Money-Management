@@ -60,7 +60,7 @@
                 android:layout_height="45dp"
                 android:text="0$"
                 android:textStyle="bold"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:layout_marginLeft="69dp"
                 android:textColor="@color/white" />
             <ImageButton
@@ -81,13 +81,14 @@
             android:layout_marginLeft="216dp"
             android:layout_marginTop="-90dp"
             >
+
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chi phí"
-                android:textColor="@color/white"
                 android:layout_marginLeft="80dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:text="Chi phí"
+                android:textColor="@color/white" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_chiphi"
@@ -95,7 +96,7 @@
                 android:layout_height="45dp"
                 android:text="0$"
                 android:textStyle="bold"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:layout_marginLeft="80dp"
                 android:textColor="@color/white" />
             <ImageButton
@@ -136,6 +137,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tv_week"
                     android:text="Tuần"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -144,6 +146,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tv_month"
                     android:text="Tháng"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -155,7 +158,7 @@
                     android:id="@+id/moneytoday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="$500"
+                    android:text="0$"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -165,7 +168,7 @@
                     android:id="@+id/moneyweek"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="$500"
+                    android:text="0$"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -175,7 +178,7 @@
                     android:id="@+id/moneymonth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="$500"
+                    android:text="0$"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -207,4 +210,8 @@
         android:textStyle="bold"
         android:layout_marginTop="-32dp"
         />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
