@@ -252,7 +252,7 @@ public class BudgetActivity extends AppCompatActivity {
     public class MyViewHolder extends RecyclerView.ViewHolder {
         View mView;
         public ImageView imageView;
-        public TextView notes;
+        public TextView notes,date;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -260,6 +260,7 @@ public class BudgetActivity extends AppCompatActivity {
             mView = itemView;
             imageView = itemView.findViewById(R.id.imageView);
             notes = itemView.findViewById(R.id.note);
+            date=itemView.findViewById(R.id.date);
         }
 
         public void setItemName(String itemName) {

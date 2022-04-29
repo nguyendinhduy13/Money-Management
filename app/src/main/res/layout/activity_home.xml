@@ -130,6 +130,7 @@
                     android:text="Hôm nay"
                     android:textColor="@color/black"
                     android:textSize="20dp"
+                    android:id="@+id/todaytv"
                     android:layout_marginLeft="30dp"
                     />
                 <com.google.android.material.textview.MaterialTextView
