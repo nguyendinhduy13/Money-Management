@@ -4,31 +4,40 @@
     android:layout_margin="10dp"
     android:orientation="vertical"
     android:layout_height="match_parent">
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Thay đổi loại ngân sách"
+        android:text="update this item?"
         android:gravity="center"
         android:textColor="#000"/>
     <TextView
         android:id="@+id/itemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Loại ngân sách"
+        android:hint="itemName"
         android:textColor="#000"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="20sp"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Thêm chi phí.."
+        android:hint="enter amount.."
         android:textColorHint="#000"
         android:inputType="number"
         android:id="@+id/amount"
         android:textColor="#000"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter note.."
+        android:textColorHint="#000"
+        android:id="@+id/note"
+        android:textColor="#000"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,14 +54,11 @@
                 android:id="@+id/btnDelete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/edit_round"
                 android:text="Delete"
                 android:textAllCaps="false"
-                android:textColor="#000"></Button>
+                android:textColor="#000"
+                android:layout_margin="2dp">
+            </Button>
         </RelativeLayout>
 
         <RelativeLayout
@@ -68,12 +74,12 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@drawable/edit_round"
                 android:text="Update"
                 android:textAllCaps="false"
                 android:textColor="#000"></Button>
         </RelativeLayout>
     </LinearLayout>
+
 
 
 </LinearLayout>

@@ -28,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         linearNgansach=findViewById(R.id.linearNgansach);
+        tv_homnay=findViewById(R.id.tv_homnay);
         tvthunhap=findViewById(R.id.tv_thunhap);
         mAuth = FirebaseAuth.getInstance();
         budgetRef= FirebaseDatabase.getInstance().getReference().child("budget").child(mAuth.getCurrentUser().getUid());
@@ -59,6 +60,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
+        tv_homnay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,TodaySpendingActivity.class);
                 startActivity(intent);
             }
         });
