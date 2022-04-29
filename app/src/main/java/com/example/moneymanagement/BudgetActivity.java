@@ -17,6 +17,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,11 +43,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+
 public class BudgetActivity extends AppCompatActivity {
 
     private TextView totalBudgetAmountTextView;
     private RecyclerView recyclerView;
-
     private FloatingActionButton fab;
     private DatabaseReference budgetRef, personalRef;
     private FirebaseAuth mAuth;
@@ -189,7 +190,6 @@ public class BudgetActivity extends AppCompatActivity {
                 holder.setItemAmount(model.getAmount() + "$");
                 holder.setDate("On: " + model.getDate());
                 holder.setItemName(model.getItem());
-
                 switch (model.getItem()) {
                     case "Transport":
                         holder.imageView.setImageResource(R.drawable.transport);
@@ -198,10 +198,10 @@ public class BudgetActivity extends AppCompatActivity {
                         holder.imageView.setImageResource(R.drawable.food);
                         break;
                     case "House":
-                        holder.imageView.setImageResource(R.drawable.home);
+                        holder.imageView.setImageResource(R.drawable.house);
                         break;
                     case "Entertainment":
-                        holder.imageView.setImageResource(R.drawable.entertaiment);
+                        holder.imageView.setImageResource(R.drawable.entertainment);
                         break;
                     case "Education":
                         holder.imageView.setImageResource(R.drawable.education);
@@ -210,16 +210,16 @@ public class BudgetActivity extends AppCompatActivity {
                         holder.imageView.setImageResource(R.drawable.charity);
                         break;
                     case "Apparel":
-                        holder.imageView.setImageResource(R.drawable.clothes);
+                        holder.imageView.setImageResource(R.drawable.apparel);
                         break;
                     case "Health":
                         holder.imageView.setImageResource(R.drawable.health);
                         break;
                     case "Personal":
-                        holder.imageView.setImageResource(R.drawable.man);
+                        holder.imageView.setImageResource(R.drawable.personal);
                         break;
                     case "Other":
-                        holder.imageView.setImageResource(R.drawable.others);
+                        holder.imageView.setImageResource(R.drawable.other);
                         break;
                 }
 

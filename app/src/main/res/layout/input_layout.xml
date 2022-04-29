@@ -32,6 +32,7 @@
             android:orientation="vertical">
 
             <Spinner
+                android:scrollbarSize="100dp"
                 android:id="@+id/itemsspinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,10 +42,11 @@
                 android:gravity="center" />
 
             <EditText
+                android:layout_marginTop="15dp"
                 android:id="@+id/amount"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Thêm chi phí..."
+                android:layout_height="65dp"
+                android:hint="Thêm chi phí"
                 android:inputType="number"
                 android:textColor="#000"
                 android:textSize="20dp"

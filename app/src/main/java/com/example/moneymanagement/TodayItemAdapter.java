@@ -68,10 +68,10 @@ public class TodayItemAdapter extends RecyclerView.Adapter<TodayItemAdapter.View
                 holder.imageView.setImageResource(R.drawable.food);
                 break;
             case "House":
-                holder.imageView.setImageResource(R.drawable.home);
+                holder.imageView.setImageResource(R.drawable.house);
                 break;
             case "Entertainment":
-                holder.imageView.setImageResource(R.drawable.entertaiment);
+                holder.imageView.setImageResource(R.drawable.entertainment);
                 break;
             case "Education":
                 holder.imageView.setImageResource(R.drawable.education);
@@ -80,16 +80,16 @@ public class TodayItemAdapter extends RecyclerView.Adapter<TodayItemAdapter.View
                 holder.imageView.setImageResource(R.drawable.charity);
                 break;
             case "Apparel":
-                holder.imageView.setImageResource(R.drawable.clothes);
+                holder.imageView.setImageResource(R.drawable.apparel);
                 break;
             case "Health":
                 holder.imageView.setImageResource(R.drawable.health);
                 break;
             case "Personal":
-                holder.imageView.setImageResource(R.drawable.man);
+                holder.imageView.setImageResource(R.drawable.personal);
                 break;
             case "Other":
-                holder.imageView.setImageResource(R.drawable.others);
+                holder.imageView.setImageResource(R.drawable.other);
                 break;
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {

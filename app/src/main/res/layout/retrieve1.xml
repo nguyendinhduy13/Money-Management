@@ -20,7 +20,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/home" />
+            android:src="@drawable/house" />
 
         <LinearLayout
             android:id="@+id/linerLayout"
