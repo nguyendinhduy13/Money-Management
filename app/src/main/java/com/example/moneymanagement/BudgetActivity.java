@@ -189,7 +189,6 @@ public class BudgetActivity extends AppCompatActivity {
                 holder.setItemAmount(model.getAmount() + "$");
                 holder.setDate("On: " + model.getDate());
                 holder.setItemName(model.getItem());
-                holder.notes.setVisibility(View.GONE);
 
                 switch (model.getItem()) {
                     case "Transport":
@@ -252,14 +251,13 @@ public class BudgetActivity extends AppCompatActivity {
     public class MyViewHolder extends RecyclerView.ViewHolder {
         View mView;
         public ImageView imageView;
-        public TextView notes,date;
+        public TextView date;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
             imageView = itemView.findViewById(R.id.imageView);
-            notes = itemView.findViewById(R.id.note);
             date=itemView.findViewById(R.id.date);
         }
 
