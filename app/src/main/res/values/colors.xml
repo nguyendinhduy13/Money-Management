@@ -9,8 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#4b5cd6</color>
     <color name="red">#FD3C4A</color>
-    <color name="linear">#fffae5</color>
+    <color name="linear">#FFFBF4</color>
     <color name="purple">#EEE5FF</color>
     <color name="green">#00a859</color>
     <color name="house">#FFF4DF</color>
+    <color name="button">#7F3DFF</color>
+    <color name="button1">#EEE5FF</color>
 </resources>

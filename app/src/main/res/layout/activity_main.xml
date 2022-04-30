@@ -22,44 +22,49 @@
         android:layout_marginTop="16dp" />
 
     <TextView
+        android:layout_marginTop="-15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_v1"
         android:textAlignment="center"
         android:text="Được toàn quyền kiểm soát tiền của bạn"
-        android:textSize="30dp"
+        android:layout_marginHorizontal="40dp"
+        android:textSize="35dp"
         android:textStyle="bold"
         android:textColor="@color/black"
         />
 
     <TextView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:id="@+id/text_v2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Trở thành người quản lý tiền của bạn và chi tiêu hợp lý"
+        android:layout_marginHorizontal="50dp"
         android:textAlignment="center"
+        android:textSize="17dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="#91919F"
         />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
         android:layout_width="340dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         app:cornerRadius="16dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/button"
         android:text="Đăng Nhập"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="7dp"
 
         />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegister"
         android:layout_width="340dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         app:cornerRadius="16dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/button1"
+        android:textColor="@color/button"
         android:text="Đăng Ký"
         android:layout_marginBottom="16dp"
         />

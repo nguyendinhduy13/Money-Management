@@ -17,9 +17,9 @@
             android:id="@+id/linearitem"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@drawable/botron_item"
-            >
+            android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="50dp"
@@ -56,7 +56,7 @@
                     android:id="@+id/amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="90dp"
                     android:text="$0"
                     android:textColor="#FD3C4A"
                     android:textSize="18sp"
