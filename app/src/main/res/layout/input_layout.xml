@@ -4,24 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FD3C4A"
+    android:background="#00A86B"
     android:orientation="vertical"
     tools:context=".Expense">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="70dp"
-        android:textStyle="bold"
-        android:text="Thêm ngân sách"
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:text="Thu nhập"
         android:textColor="@color/white"
-        android:textSize="40dp"></TextView>
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="90dp"
+        android:textAlignment="center"
+        />
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Số tiền ?"
+        android:textColor="#FCFCFC"
+        android:textSize="20dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="50dp"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:text="0$"
+        android:textStyle="bold"
+        android:textColor="#FCFCFC"
+        android:textSize="60dp"
+        android:layout_marginLeft="25dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/edit_round_layout"
         android:orientation="vertical">
 
@@ -41,16 +59,16 @@
                 android:layout_weight="1"
                 android:gravity="center" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_marginTop="15dp"
                 android:id="@+id/amount"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:hint="Thêm chi phí"
+                android:hint="   Thêm chi phí"
                 android:inputType="number"
-                android:textColor="#000"
                 android:textSize="20dp"
-                android:textColorHint="#000" />
+                android:background="@drawable/bo_editext"
+                />
 
             <EditText
                 android:id="@+id/note"
@@ -62,46 +80,29 @@
                 android:visibility="gone" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel"
+            android:layout_width="140dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="Hủy"
+            android:backgroundTint="@color/button"
+            android:textSize="17dp"
+            app:cornerRadius="15dp" />
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <Button
-                    android:id="@+id/cancel"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/edit_round"
-                    android:text="Hủy"
-                    android:textSize="17dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/save"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="140dp"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="-52dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/edit_round"
                     android:text="Lưu"
-                    android:textSize="17dp" />
-            </RelativeLayout>
-        </LinearLayout>
+                    android:backgroundTint="@color/button"
+                    android:textSize="17dp"
+                    app:cornerRadius="15dp" />
     </LinearLayout>
 
 
