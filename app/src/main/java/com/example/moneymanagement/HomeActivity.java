@@ -200,7 +200,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
                     totalAmountBudgetC=totalAmountBudgetB;
                     personalRef.child("budget").setValue(totalAmountBudgetC);
-                    totalAmountBudgetC=0;
                     totalAmountBudgetB=0;
                 }else {
                     personalRef.child("budget").setValue(0);
@@ -218,6 +217,7 @@ public class HomeActivity extends AppCompatActivity {
         getWeekSpendingAmount();
         getMonthSpendingAmount();
         getSavings();
+
     }
 
     private void getSavings() {
