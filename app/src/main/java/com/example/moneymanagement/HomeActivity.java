@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -36,9 +39,9 @@ import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private LinearLayout linearNgansach;
+    private LinearLayout linearNgansach,linear_chiphi;
     private TextView tv_homnay,tv_thunhap,tv_week,tv_month,tv_chiphi,moneytoday,moneyweek,moneymonth,tv_sodu;
-    private Button btnhistory;
+    private Button btnhistory,btnhoso;
 
     private DatabaseReference budgetRef,personalRef,expensesRef;
     private FirebaseAuth mAuth;
@@ -60,6 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         linearNgansach = findViewById(R.id.linearNgansach);
+        linear_chiphi = findViewById(R.id.linear_chiphi);
         tv_homnay = findViewById(R.id.tv_homnay);
         tv_week = findViewById(R.id.tv_week);
         tv_month = findViewById(R.id.tv_month);
@@ -70,6 +74,7 @@ public class HomeActivity extends AppCompatActivity {
         moneymonth = findViewById(R.id.moneymonth);
         tv_sodu = findViewById(R.id.tv_sodu);
         btnhistory = findViewById(R.id.btnhistory);
+        btnhoso = findViewById(R.id.btnhoso);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView = findViewById(R.id.recyclerView);
@@ -124,6 +129,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        linear_chiphi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,TodaySpendingActivity.class);
+                startActivity(intent);
+            }
+        });
         tv_homnay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,6 +163,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnhoso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,AccountActivity.class);
                 startActivity(intent);
             }
         });
