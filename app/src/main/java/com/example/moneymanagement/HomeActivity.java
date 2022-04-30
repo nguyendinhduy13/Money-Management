@@ -147,7 +147,7 @@ public class HomeActivity extends AppCompatActivity {
         btnhoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,AccountActivity.class);
+                Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
                 startActivity(intent);
             }
         });

@@ -41,7 +41,7 @@
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/userEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="130dp"
@@ -142,21 +142,22 @@
                 android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/linear_dang_xuat"
             android:layout_width="360dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/linear_xuat"
-            >
+            android:layout_below="@+id/linear_xuat">
+
             <LinearLayout
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
-                android:background="@drawable/ic_logout_figma">
-            </LinearLayout>
+                android:background="@drawable/ic_logout_figma"></LinearLayout>
 
             <TextView
+                android:id="@+id/logoutBtn"
                 android:layout_width="240dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
