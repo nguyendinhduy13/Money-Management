@@ -9,16 +9,17 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class SearchActivity extends AppCompatActivity {
-
+public class ChooseAnalyticActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_choose_analytic);
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
-        bottomNavigationView.setSelectedItemId(R.id.action_search);
+        bottomNavigationView.setSelectedItemId(R.id.action_chart);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -26,16 +27,14 @@ public class SearchActivity extends AppCompatActivity {
                     case R.id.action_search:
                         return true;
                     case R.id.action_home:
-                        startActivity(new Intent(SearchActivity.this,HomeActivity.class));
+                        startActivity(new Intent(ChooseAnalyticActivity.this,HomeActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.action_profile:
-                        startActivity(new Intent(SearchActivity.this,ProfileActivity.class));
+                        startActivity(new Intent(ChooseAnalyticActivity.this,ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.action_chart:
-                        startActivity(new Intent(SearchActivity.this,ChooseAnalyticActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
 
                 }
