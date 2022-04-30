@@ -37,8 +37,8 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.action_search:
-                        startActivity(new Intent(ProfileActivity.this,SearchActivity.class));
+                    case R.id.action_history:
+                        startActivity(new Intent(ProfileActivity.this,HistoryActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.action_home:

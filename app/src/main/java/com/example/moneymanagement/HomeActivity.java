@@ -109,14 +109,18 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.action_search:
-                        startActivity(new Intent(HomeActivity.this,SearchActivity.class));
+                    case R.id.action_history:
+                        startActivity(new Intent(HomeActivity.this,HistoryActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.action_home:
                         return true;
                     case R.id.action_profile:
                         startActivity(new Intent(HomeActivity.this,ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.action_chart:
+                        startActivity(new Intent(HomeActivity.this,ChooseAnalyticActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

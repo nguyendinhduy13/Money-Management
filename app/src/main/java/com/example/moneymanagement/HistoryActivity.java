@@ -7,13 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +32,7 @@ import java.util.Map;
 
 public class HistoryActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
+    private BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerView;
 
     private TodayItemAdapter todayItemsAdapter;
@@ -53,6 +57,33 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("History");
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.action_history);
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.action_history:
+                        return true;
+                    case R.id.action_home:
+                        startActivity(new Intent(HistoryActivity.this,HomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.action_profile:
+                        startActivity(new Intent(HistoryActivity.this,ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.action_chart:
+                        startActivity(new Intent(HistoryActivity.this,ChooseAnalyticActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
 
         search = findViewById(R.id.search);
         historyTotalAmountSpent = findViewById(R.id.historyTotalAmountSpent);

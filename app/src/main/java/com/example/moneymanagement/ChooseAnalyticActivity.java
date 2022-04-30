@@ -20,11 +20,14 @@ public class ChooseAnalyticActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setSelectedItemId(R.id.action_chart);
+
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.action_search:
+                    case R.id.action_history:
+                        startActivity(new Intent(ChooseAnalyticActivity.this,HistoryActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.action_home:
                         startActivity(new Intent(ChooseAnalyticActivity.this,HomeActivity.class));
