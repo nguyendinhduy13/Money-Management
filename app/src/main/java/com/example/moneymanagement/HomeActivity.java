@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,6 +43,8 @@ public class HomeActivity extends AppCompatActivity {
     private LinearLayout linearNgansach,linear_chiphi;
     private TextView tv_homnay,tv_thunhap,tv_week,tv_month,tv_chiphi,moneytoday,moneyweek,moneymonth,tv_sodu;
     private Button btnhistory,btnhoso;
+
+    private BottomNavigationView bottomNavigationView;
 
     private DatabaseReference budgetRef,personalRef,expensesRef;
     private FirebaseAuth mAuth;
@@ -76,6 +79,10 @@ public class HomeActivity extends AppCompatActivity {
         btnhistory = findViewById(R.id.btnhistory);
         btnhoso = findViewById(R.id.btnhoso);
 
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
+
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -98,7 +105,24 @@ public class HomeActivity extends AppCompatActivity {
 
         readMonthSpendingItems();
 
-
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.action_search:
+                        startActivity(new Intent(HomeActivity.this,SearchActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.action_home:
+                        return true;
+                    case R.id.action_profile:
+                        startActivity(new Intent(HomeActivity.this,ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         linearNgansach.setOnClickListener(new View.OnClickListener() {
             @Override
