@@ -422,14 +422,21 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int totalAmount=0;
-                for(DataSnapshot ds:snapshot.getChildren()){
-                    Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                    Object total=map.get("amount");
-                    int pTotal=Integer.parseInt(String.valueOf(total));
-                    totalAmount+=pTotal;
-                    moneytoday.setText(totalAmount+"$");
+                if(snapshot.exists() && snapshot.getChildrenCount()>0) {
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        int pTotal = Integer.parseInt(String.valueOf(total));
+                        totalAmount += pTotal;
+                        moneytoday.setText(totalAmount + "$");
+                    }
+                    personalRef.child("today").setValue(totalAmount);
                 }
-                personalRef.child("today").setValue(totalAmount);
+                else {
+                    totalAmount=0;
+                    moneytoday.setText(totalAmount + "$");
+                    personalRef.child("today").setValue(totalAmount);
+                }
             }
 
             @Override

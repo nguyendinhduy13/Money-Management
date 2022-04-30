@@ -115,13 +115,19 @@ public class TodaySpendingActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 
                 int totalAmount=0;
-                for(DataSnapshot ds: snapshot.getChildren()){
-                    Map<String,Object> map=(Map<String, Object>)ds.getValue();
-                    Object total=map.get("amount");
-                    int pTotal=Integer.parseInt(String.valueOf(total));
-                    totalAmount+=pTotal;
+                if(snapshot.exists() && snapshot.getChildrenCount()>0) {
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        int pTotal = Integer.parseInt(String.valueOf(total));
+                        totalAmount += pTotal;
 
-                    totalAmountSpentOn.setText("Chi phí hôm nay: $"+totalAmount);
+                        totalAmountSpentOn.setText("Chi phí hôm nay: $" + totalAmount);
+                    }
+                }
+                else {
+                    totalAmount=0;
+                    totalAmountSpentOn.setText("Chi phí hôm nay: $" + totalAmount);
                 }
             }
 
