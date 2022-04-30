@@ -65,7 +65,7 @@
                 android:id="@+id/amount"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:hint="   Chi phí thay đổi"
+                android:hint="   Thu nhập"
                 android:inputType="number"
                 android:textSize="20dp"
                 android:background="@drawable/bo_editext"
