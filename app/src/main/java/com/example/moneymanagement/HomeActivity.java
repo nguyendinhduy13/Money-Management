@@ -98,29 +98,7 @@ public class HomeActivity extends AppCompatActivity {
 
         readMonthSpendingItems();
 
-        budgetRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
-                    for (DataSnapshot ds : snapshot.getChildren()) {
-                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
-                        Object total = map.get("amount");
-                        int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAmountBudgetB += pTotal;
-                    }
-                    totalAmountBudgetC = totalAmountBudgetB;
-                    personalRef.child("budget").setValue(totalAmountBudgetC);
-                } else {
-                    personalRef.child("budget").setValue(0);
-                    Toast.makeText(HomeActivity.this, "Please Set a BUDGET", Toast.LENGTH_LONG).show();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         linearNgansach.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,6 +180,31 @@ public class HomeActivity extends AppCompatActivity {
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
 
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        budgetRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists() && snapshot.getChildrenCount()>0){
+                    for(DataSnapshot ds : snapshot.getChildren()){
+                        Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                        Object total=map.get("amount");
+                        int pTotal=Integer.parseInt(String.valueOf(total));
+                        totalAmountBudgetB+=pTotal;
+                    }
+                    totalAmountBudgetC=totalAmountBudgetB;
+                    personalRef.child("budget").setValue(totalAmountBudgetC);
+                    totalAmountBudgetC=0;
+                    totalAmountBudgetB=0;
+                }else {
+                    personalRef.child("budget").setValue(0);
+                    Toast.makeText(HomeActivity.this,"Please Set a BUDGET",Toast.LENGTH_LONG).show();
                 }
             }
 
