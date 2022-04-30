@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private LinearLayout linearNgansach;
     private TextView tv_homnay,tv_thunhap,tv_week,tv_month,tv_chiphi,moneytoday,moneyweek,moneymonth,tv_sodu;
+    private Button btnhistory;
 
     private DatabaseReference budgetRef,personalRef,expensesRef;
     private FirebaseAuth mAuth;
@@ -67,6 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         moneyweek = findViewById(R.id.moneyweek);
         moneymonth = findViewById(R.id.moneymonth);
         tv_sodu = findViewById(R.id.tv_sodu);
+        btnhistory = findViewById(R.id.btnhistory);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView = findViewById(R.id.recyclerView);
@@ -141,6 +144,13 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,WeekSpendingActivity.class);
                 intent.putExtra("type","month");
+                startActivity(intent);
+            }
+        });
+        btnhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,HistoryActivity.class);
                 startActivity(intent);
             }
         });

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Money-Management/app/src/main/res/drawable/botron_item.xml" value="0.1" />
+        <entry key="..\:/Money-Management/app/src/main/res/drawable/buttons.xml" value="0.1395" />
         <entry key="..\:/Money-Management/app/src/main/res/drawable/edit_round_layout.xml" value="0.1395" />
         <entry key="..\:/Money-Management/app/src/main/res/drawable/ic_add.xml" value="0.1525" />
         <entry key="..\:/Money-Management/app/src/main/res/drawable/layout_botron.xml" value="0.1" />
@@ -11,6 +12,7 @@
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_budget.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_expense.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_financial_report_income.xml" value="0.2" />
+        <entry key="..\:/Money-Management/app/src/main/res/layout/activity_history.xml" value="0.13645833333333332" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_main.xml" value="0.2" />
