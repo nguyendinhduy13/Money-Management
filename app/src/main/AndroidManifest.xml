@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyManagement">
         <activity
-            android:name=".AccountActivity"
+            android:name=".SearchActivity"
             android:exported="false" />
         <activity
             android:name=".HistoryActivity"
