@@ -81,7 +81,6 @@ public class TodaySpendingActivity extends AppCompatActivity {
         linearLayoutManager.setReverseLayout(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
-
         myDataList = new ArrayList<>();
         todayItemsAdapter=new TodayItemAdapter(TodaySpendingActivity.this,myDataList);
         recyclerView.setAdapter(todayItemsAdapter);

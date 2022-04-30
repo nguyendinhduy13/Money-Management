@@ -6,7 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#FFFAF0"
+    android:id="@+id/bigestlayout"
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
@@ -53,8 +55,8 @@
             android:id="@+id/tv_sodu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="$500"
-            android:textSize="50dp"
+            android:text="0%"
+            android:textSize="40dp"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -247,11 +249,46 @@
         android:textStyle="bold"
         android:layout_marginTop="-40dp"
         />
-    <androidx.recyclerview.widget.RecyclerView
-        android:background="#FFFCF6"
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="250dp"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#FFFCF6" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_ngansach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="13dp"
+            android:layout_toStartOf="@+id/btn_chiphi"
+            android:visibility="gone"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_arrow_downward_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_chiphi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="182dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_arrow_upward_24" />
+    </RelativeLayout>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="75dp">
@@ -272,10 +309,12 @@
                 android:background="@color/white"/>
         </com.google.android.material.bottomappbar.BottomAppBar>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add"
             app:maxImageSize="30dp"
+            android:backgroundTint="@color/teal_200"
             app:layout_anchor="@id/bottomAppBar"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

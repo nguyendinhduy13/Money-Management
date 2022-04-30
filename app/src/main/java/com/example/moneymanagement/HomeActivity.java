@@ -7,16 +7,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,11 +46,16 @@ import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private LinearLayout linearNgansach,linear_chiphi;
+    private LinearLayout bigestlayout;
+
     private TextView tv_homnay,tv_thunhap,tv_week,tv_month,tv_chiphi,moneytoday,moneyweek,moneymonth,tv_sodu;
     private Button btnhistory,btnhoso;
 
     private BottomNavigationView bottomNavigationView;
+
+    private FloatingActionButton add,add_chiphi,add_ngansach;
+    private Boolean aBoolean=true;
+    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
 
     private DatabaseReference budgetRef,personalRef,expensesRef;
     private FirebaseAuth mAuth;
@@ -65,8 +76,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        linearNgansach = findViewById(R.id.linearNgansach);
-        linear_chiphi = findViewById(R.id.linear_chiphi);
         tv_homnay = findViewById(R.id.tv_homnay);
         tv_week = findViewById(R.id.tv_week);
         tv_month = findViewById(R.id.tv_month);
@@ -79,9 +88,19 @@ public class HomeActivity extends AppCompatActivity {
         btnhistory = findViewById(R.id.btnhistory);
         btnhoso = findViewById(R.id.btnhoso);
 
+        bigestlayout = findViewById(R.id.bigestlayout);
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setSelectedItemId(R.id.action_home);
+
+        add = findViewById(R.id.add);
+        add_chiphi = findViewById(R.id.btn_chiphi);
+        add_ngansach = findViewById(R.id.btn_ngansach);
+        fab_open = AnimationUtils.loadAnimation(this,R.anim.fab_open);
+        fab_close = AnimationUtils.loadAnimation(this,R.anim.fab_close);
+        rotate_forward = AnimationUtils.loadAnimation(this,R.anim.rotate_forward);
+        rotate_backward = AnimationUtils.loadAnimation(this,R.anim.rotate_backforward);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView = findViewById(R.id.recyclerView);
@@ -127,19 +146,41 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               handleFab();
+            }
+        });
 
-        linearNgansach.setOnClickListener(new View.OnClickListener() {
+        bigestlayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                handleTouch(motionEvent);
+                return true;
+            }
+        });
+
+        add_ngansach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,BudgetActivity.class);
                 startActivity(intent);
+                add.startAnimation(rotate_backward);
+                add_chiphi.hide();
+                add_ngansach.hide();
+                aBoolean = true;
             }
         });
-        linear_chiphi.setOnClickListener(new View.OnClickListener() {
+        add_chiphi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,TodaySpendingActivity.class);
                 startActivity(intent);
+                add.startAnimation(rotate_backward);
+                add_chiphi.hide();
+                add_ngansach.hide();
+                aBoolean = true;
             }
         });
         tv_homnay.setOnClickListener(new View.OnClickListener() {
@@ -179,6 +220,38 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void handleFab() {
+        if(aBoolean)
+        {
+            add.startAnimation(rotate_forward);
+            add_chiphi.startAnimation(fab_open);
+            add_ngansach.startAnimation(fab_open);
+            add_chiphi.setClickable(true);
+            add_ngansach.setClickable(true);
+            add_chiphi.show();
+            add_ngansach.show();
+            aBoolean = false;
+        }else{
+            add.startAnimation(rotate_backward);
+            add_chiphi.startAnimation(fab_close);
+            add_ngansach.startAnimation(fab_close);
+            add_chiphi.setClickable(false);
+            add_ngansach.setClickable(false);
+            add_chiphi.hide();
+            add_ngansach.hide();
+            aBoolean = true;
+        }
+    }
+
+    private void handleTouch(MotionEvent motionEvent) {
+        if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+            add_chiphi.hide();
+            add_ngansach.hide();
+            add.startAnimation(rotate_backward);
+            aBoolean = true;
+        }
     }
 
     private void readMonthSpendingItems() {
