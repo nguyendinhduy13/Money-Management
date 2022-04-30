@@ -13,20 +13,41 @@
         android:orientation="vertical"
         android:background="@drawable/layout_bolinearcolor"
         >
-        <Spinner
-            android:id="@+id/spinner_month"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="110dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="10dp"
+            >
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="-39dp"
+            android:background="@drawable/layout_bolinearcolor"
             />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginLeft="358dp"
+            android:src="@drawable/notifiaction"
+            android:background="@color/linear"
 
+            />
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Số dư tài khoản"
             android:textAlignment="center"
             android:textSize="18dp"
-            android:textColor="@color/black"
+            android:textColor="#91919F"
             />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_sodu"
