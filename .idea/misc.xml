@@ -4,17 +4,30 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Money-Management/app/src/main/res/drawable/botron_item.xml" value="0.1" />
+        <entry key="..\:/Money-Management/app/src/main/res/drawable/buttons.xml" value="0.1395" />
         <entry key="..\:/Money-Management/app/src/main/res/drawable/edit_round_layout.xml" value="0.1395" />
         <entry key="..\:/Money-Management/app/src/main/res/drawable/ic_add.xml" value="0.1525" />
+<<<<<<< HEAD
         <entry key="..\:/Money-Management/app/src/main/res/drawable/layout_bolinearcolor.xml" value="0.2265" />
+=======
+        <entry key="..\:/Money-Management/app/src/main/res/drawable/ic_person.xml" value="0.1395" />
+>>>>>>> 46d6f6839d4367fb649aaf0d81ba6d8e5d334cb8
         <entry key="..\:/Money-Management/app/src/main/res/drawable/layout_botron.xml" value="0.1" />
         <entry key="..\:/Money-Management/app/src/main/res/drawable/ngansach.xml" value="0.1395" />
+        <entry key="..\:/Money-Management/app/src/main/res/layout/activity_account.xml" value="0.13645833333333332" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_budget.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_expense.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_financial_report_income.xml" value="0.2" />
+<<<<<<< HEAD
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_main.xml" value="0.264" />
+=======
+        <entry key="..\:/Money-Management/app/src/main/res/layout/activity_history.xml" value="0.13645833333333332" />
+        <entry key="..\:/Money-Management/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Money-Management/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Money-Management/app/src/main/res/layout/activity_main.xml" value="0.2" />
+>>>>>>> 46d6f6839d4367fb649aaf0d81ba6d8e5d334cb8
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_registration.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/activity_setting.xml" value="0.2" />
@@ -28,6 +41,7 @@
         <entry key="..\:/Money-Management/app/src/main/res/layout/retrieve_layout.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/update_layout.xml" value="0.2" />
         <entry key="..\:/Money-Management/app/src/main/res/layout/update_layout1.xml" value="0.264" />
+        <entry key="..\:/Money-Management/app/src/main/res/menu/menu.xml" value="0.25" />
         <entry key="..\:/MoneyManagement/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/MoneyManagement/app/src/main/res/drawable/botron_button.xml" value="0.2625" />
         <entry key="..\:/MoneyManagement/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />

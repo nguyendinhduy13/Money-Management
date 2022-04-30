@@ -75,6 +75,7 @@
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/linear_chiphi"
             android:layout_width="170dp"
             android:layout_height="90dp"
             android:background="@drawable/layout_corner_red"
@@ -199,6 +200,32 @@
         android:layout_marginLeft="10dp"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnhistory"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Tìm kiếm"
+        android:textSize="10dp"
+        app:cornerRadius="10dp"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/purple_700"
+        android:layout_marginLeft="290dp"
+        android:textStyle="bold"
+        android:layout_marginTop="-32dp"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnhoso"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Hồ sơ"
+        android:textSize="10dp"
+        app:cornerRadius="10dp"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/purple_700"
+        android:layout_marginLeft="170dp"
+        android:textStyle="bold"
+        android:layout_marginTop="-40dp"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:background="#FFFCF6"
         android:id="@+id/recyclerView"

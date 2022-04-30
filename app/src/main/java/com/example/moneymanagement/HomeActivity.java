@@ -7,7 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,8 +39,9 @@ import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private LinearLayout linearNgansach;
+    private LinearLayout linearNgansach,linear_chiphi;
     private TextView tv_homnay,tv_thunhap,tv_week,tv_month,tv_chiphi,moneytoday,moneyweek,moneymonth,tv_sodu;
+    private Button btnhistory,btnhoso;
 
     private DatabaseReference budgetRef,personalRef,expensesRef;
     private FirebaseAuth mAuth;
@@ -58,6 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         linearNgansach = findViewById(R.id.linearNgansach);
+        linear_chiphi = findViewById(R.id.linear_chiphi);
         tv_homnay = findViewById(R.id.tv_homnay);
         tv_week = findViewById(R.id.tv_week);
         tv_month = findViewById(R.id.tv_month);
@@ -67,6 +73,8 @@ public class HomeActivity extends AppCompatActivity {
         moneyweek = findViewById(R.id.moneyweek);
         moneymonth = findViewById(R.id.moneymonth);
         tv_sodu = findViewById(R.id.tv_sodu);
+        btnhistory = findViewById(R.id.btnhistory);
+        btnhoso = findViewById(R.id.btnhoso);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView = findViewById(R.id.recyclerView);
@@ -90,34 +98,19 @@ public class HomeActivity extends AppCompatActivity {
 
         readMonthSpendingItems();
 
-        budgetRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
-                    for (DataSnapshot ds : snapshot.getChildren()) {
-                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
-                        Object total = map.get("amount");
-                        int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAmountBudgetB += pTotal;
-                    }
-                    totalAmountBudgetC = totalAmountBudgetB;
-                    personalRef.child("budget").setValue(totalAmountBudgetC);
-                } else {
-                    personalRef.child("budget").setValue(0);
-                    Toast.makeText(HomeActivity.this, "Please Set a BUDGET", Toast.LENGTH_LONG).show();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         linearNgansach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
+        linear_chiphi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,TodaySpendingActivity.class);
                 startActivity(intent);
             }
         });
@@ -141,6 +134,20 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,WeekSpendingActivity.class);
                 intent.putExtra("type","month");
+                startActivity(intent);
+            }
+        });
+        btnhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnhoso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,AccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -173,6 +180,31 @@ public class HomeActivity extends AppCompatActivity {
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
 
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        budgetRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists() && snapshot.getChildrenCount()>0){
+                    for(DataSnapshot ds : snapshot.getChildren()){
+                        Map<String,Object> map=(Map<String, Object>) ds.getValue();
+                        Object total=map.get("amount");
+                        int pTotal=Integer.parseInt(String.valueOf(total));
+                        totalAmountBudgetB+=pTotal;
+                    }
+                    totalAmountBudgetC=totalAmountBudgetB;
+                    personalRef.child("budget").setValue(totalAmountBudgetC);
+                    totalAmountBudgetC=0;
+                    totalAmountBudgetB=0;
+                }else {
+                    personalRef.child("budget").setValue(0);
+                    Toast.makeText(HomeActivity.this,"Please Set a BUDGET",Toast.LENGTH_LONG).show();
                 }
             }
 
