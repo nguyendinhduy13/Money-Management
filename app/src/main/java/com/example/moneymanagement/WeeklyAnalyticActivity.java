@@ -237,7 +237,8 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total=map.get("amount");
                         int pTotal=Integer.parseInt(String.valueOf(total));
                         totalAmount +=pTotal;
-                        analyticsApparelAmount.setText("Spent: "+totalAmount);
+                        Toast.makeText(WeeklyAnalyticActivity.this,"aaaaaaaaa",Toast.LENGTH_SHORT).show();
+                        analyticsPersonalExpensesAmount.setText("Spent: "+totalAmount);
                     }
                     personalRef.child("weekPer").setValue(totalAmount);
                 }
@@ -311,7 +312,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total=map.get("amount");
                         int pTotal=Integer.parseInt(String.valueOf(total));
                         totalAmount +=pTotal;
-                        analyticsCharityAmount.setText("Spent: "+totalAmount);
+                        analyticsApparelAmount.setText("Spent: "+totalAmount);
                     }
                     personalRef.child("weekApp").setValue(totalAmount);
                 }
