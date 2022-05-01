@@ -143,7 +143,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
             }
         };
         new java.util.Timer().schedule(
-                task,1000
+                task,500
         );
     }
 
