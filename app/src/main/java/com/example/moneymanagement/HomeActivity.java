@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -45,6 +46,8 @@ import java.util.Map;
 import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private ImageButton image_hoso;
 
     private LinearLayout bigestlayout;
 
@@ -87,6 +90,7 @@ public class HomeActivity extends AppCompatActivity {
         tv_sodu = findViewById(R.id.tv_sodu);
         btnhistory = findViewById(R.id.btnhistory);
         btnhoso = findViewById(R.id.btnhoso);
+        image_hoso = findViewById(R.id.image_hoso);
 
         bigestlayout = findViewById(R.id.bigestlayout);
 
@@ -161,6 +165,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
         add_ngansach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -214,6 +219,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         btnhoso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        image_hoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
@@ -364,6 +376,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int totalAmount=0;
+                if(snapshot.exists() && snapshot.getChildrenCount()>0) {
                 for(DataSnapshot ds:snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     Object total=map.get("amount");
@@ -374,6 +387,13 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 personalRef.child("month").setValue(totalAmount);
                 totalAmountMonth=totalAmount;
+                }
+                else {
+                    totalAmount=0;
+                    moneymonth.setText(totalAmount + "$");
+                    tv_chiphi.setText(totalAmount+"$");
+                    personalRef.child("month").setValue(totalAmount);
+                }
             }
 
             @Override
@@ -395,6 +415,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int totalAmount=0;
+                if(snapshot.exists() && snapshot.getChildrenCount()>0) {
                 for(DataSnapshot ds:snapshot.getChildren()){
                     Map<String,Object> map=(Map<String, Object>) ds.getValue();
                     Object total=map.get("amount");
@@ -403,6 +424,12 @@ public class HomeActivity extends AppCompatActivity {
                     moneyweek.setText(totalAmount+"$");
                 }
                 personalRef.child("week").setValue(totalAmount);
+                }
+                else {
+                    totalAmount=0;
+                    moneyweek.setText(totalAmount + "$");
+                    personalRef.child("week").setValue(totalAmount);
+                }
             }
 
             @Override
@@ -462,7 +489,7 @@ public class HomeActivity extends AppCompatActivity {
                     totalAmountBudget=0;
                 }else {
                     totalAmountBudget=0;
-                    tv_thunhap.setText(String.valueOf(0)+"$");
+                    tv_thunhap.setText(String.valueOf(totalAmountBudget)+"$");
                 }
 
 

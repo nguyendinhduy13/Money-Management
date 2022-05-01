@@ -27,13 +27,15 @@
                 android:layout_height="wrap_content"
                 />
         </com.google.android.material.textfield.TextInputLayout>
+
         <ImageButton
+            android:src="@drawable/personal"
+            android:id="@+id/image_hoso"
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="39dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="-39dp"
-            android:background="@drawable/layout_bolinearcolor"
-            />
+            android:background="@drawable/layout_bolinearcolor" />
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
