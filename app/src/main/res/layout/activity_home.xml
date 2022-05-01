@@ -29,18 +29,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
-            android:src="@drawable/personal"
+            android:src="@drawable/layout_avt"
             android:id="@+id/image_hoso"
             android:layout_width="50dp"
-            android:layout_height="39dp"
-            android:layout_marginLeft="5dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="-39dp"
             android:background="@drawable/layout_bolinearcolor" />
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="-50dp"
-            android:layout_marginLeft="358dp"
+            android:layout_marginLeft="340dp"
             android:src="@drawable/notifiaction"
             android:background="@color/linear"
 
@@ -69,7 +69,7 @@
             android:layout_height="90dp"
             android:background="@drawable/layout_bg"
             android:orientation="vertical"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             >
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
@@ -104,7 +104,7 @@
             android:layout_height="90dp"
             android:background="@drawable/layout_corner_red"
             android:orientation="vertical"
-            android:layout_marginLeft="216dp"
+            android:layout_marginLeft="213dp"
             android:layout_marginTop="-90dp"
             >
 

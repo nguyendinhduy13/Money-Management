@@ -71,6 +71,7 @@
         android:layout_marginTop="70dp"
         android:background="@drawable/layout_bg_setting"
         >
+
         <LinearLayout
             android:id="@+id/linear_tai_khoan"
             android:layout_width="360dp"
