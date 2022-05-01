@@ -237,7 +237,6 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total=map.get("amount");
                         int pTotal=Integer.parseInt(String.valueOf(total));
                         totalAmount +=pTotal;
-                        Toast.makeText(WeeklyAnalyticActivity.this,"aaaaaaaaa",Toast.LENGTH_SHORT).show();
                         analyticsPersonalExpensesAmount.setText("Spent: "+totalAmount);
                     }
                     personalRef.child("weekPer").setValue(totalAmount);
