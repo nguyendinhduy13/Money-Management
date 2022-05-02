@@ -276,6 +276,7 @@
             android:focusable="true"
             android:tint="@android:color/white"
             android:visibility="gone"
+            android:src="@drawable/ic_arrow_downward_24"
             app:maxImageSize="30dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -292,6 +293,7 @@
             android:focusable="true"
             android:tint="@android:color/white"
             android:visibility="gone"
+            android:src="@drawable/ic_arrow_upward_24"
             app:maxImageSize="30dp" />
 
     </RelativeLayout>

@@ -236,8 +236,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void handleFab() {
-        add_ngansach.setImageResource(R.drawable.thunhap);
-        add_chiphi.setImageResource(R.drawable.chiphi);
         if(aBoolean)
         {
             add.startAnimation(rotate_forward);

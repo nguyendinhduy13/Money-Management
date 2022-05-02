@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.compose.ui.text.font.FontWeight;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -51,7 +52,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
 
     private TextView progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha,progress_ratio_app,progress_ratio_hea,progress_ratio_per,progress_ratio_oth;
 
-    private ImageView monthRatioSpending_Image,status_Image_transport,status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth;
+    private ImageView btn_back,monthRatioSpending_Image,status_Image_transport,status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth;
 
 
     @Override
@@ -114,6 +115,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
         status_Image_hea=findViewById(R.id.status_Image_hea);
         status_Image_per=findViewById(R.id.status_Image_per);
         status_Image_oth=findViewById(R.id.status_Image_oth);
+        btn_back=findViewById(R.id.back_button);
 
         anyChartView=findViewById(R.id.anyChartView);
 
@@ -139,6 +141,13 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
         new java.util.Timer().schedule(
                 task,500
         );
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(WeeklyAnalyticActivity.this,ChooseAnalyticActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void getTotalDaySpending() {
         MutableDateTime epoch=new MutableDateTime();
@@ -160,7 +169,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         int pTotal=Integer.parseInt(String.valueOf(total));
                         totalAmount +=pTotal;
                     }
-                    totalBudgetAmountTextView.setText("Total Spend: $"+totalAmount);
+                    totalBudgetAmountTextView.setText("Total: "+totalAmount+"$");
                     monthSpentAmount.setText("Total Spent: $ "+totalAmount);
                 }
                 else {
@@ -635,17 +644,6 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
 
 
                     pie.data(data);
-
-                    pie.title("Chart");
-                    pie.title().fontSize(20);
-                    pie.title().fontColor("#000000");
-
-                    pie.labels().position("outside");
-
-                    pie.legend().title().enabled(true);
-                    pie.legend().title()
-                            .text("Item Spent On")
-                            .padding(0d,0d,10d,0d);
 
                     pie.legend()
                             .position("center-bottom")
