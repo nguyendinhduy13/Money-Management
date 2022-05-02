@@ -38,7 +38,6 @@ import java.util.Map;
 import java.util.TimerTask;
 
 public class DailyAnalyticsActivity extends AppCompatActivity {
-    private Toolbar settingsToolbar;
 
     private FirebaseAuth mAuth;
     private String onlineUserId="";
@@ -58,12 +57,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_analytics);
-
-        settingsToolbar =findViewById(R.id.my_Feed_Toolbar);
-        setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Today Analytics");
 
         mAuth=FirebaseAuth.getInstance();
         onlineUserId=mAuth.getCurrentUser().getUid();

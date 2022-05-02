@@ -8,15 +8,6 @@
     android:background="#fff"
     tools:context=".ChooseAnalyticActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#000"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/CardView.Light" />
-
     <androidx.cardview.widget.CardView
         android:layout_marginTop="10dp"
         android:id="@+id/todayCardView"
@@ -125,7 +116,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="140dp"
         android:layout_width="match_parent"
         android:layout_height="75dp">
         <com.google.android.material.bottomappbar.BottomAppBar

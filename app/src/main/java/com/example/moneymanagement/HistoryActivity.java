@@ -42,8 +42,6 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
     private String onlineUserId = "";
     private DatabaseReference expensesRef, personalRef;
 
-    private Toolbar settingToolbar;
-
     private Button search;
     private TextView historyTotalAmountSpent;
 
@@ -51,12 +49,6 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-
-        settingToolbar = findViewById(R.id.my_Feed_Toolbar);
-        setSupportActionBar(settingToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("History");
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.action_history);

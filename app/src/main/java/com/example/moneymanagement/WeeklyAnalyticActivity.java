@@ -37,7 +37,6 @@ import java.util.TimerTask;
 
 public class WeeklyAnalyticActivity extends AppCompatActivity {
 
-    private Toolbar settingsToolbar;
 
     private FirebaseAuth mAuth;
     private String onlineUserId="";
@@ -58,12 +57,6 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weekly_analytic);
-
-        settingsToolbar =findViewById(R.id.my_Feed_Toolbar);
-        setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Weekly Analytics");
 
         mAuth=FirebaseAuth.getInstance();
         onlineUserId=mAuth.getCurrentUser().getUid();

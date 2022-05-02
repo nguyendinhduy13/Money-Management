@@ -12,15 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/my_Feed_Toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#000"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
         <TextView
             android:id="@+id/totalBudgetAmountTextView"
             android:layout_width="match_parent"
