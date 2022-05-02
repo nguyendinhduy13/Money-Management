@@ -219,11 +219,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/food"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout1"
+                        android:src="@drawable/food" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -570,11 +573,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout6"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/apparel"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout6"
+                        android:src="@drawable/apparel" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -711,11 +717,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout8"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/personal"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout8"
+                        android:src="@drawable/personal" />
 
                 </RelativeLayout>
                 <RelativeLayout

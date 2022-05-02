@@ -235,7 +235,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                     personalRef.child("weekPer").setValue(totalAmount);
                 }
                 else {
-                    linearLayoutApparel.setVisibility(View.GONE);
+                    linearLayoutPersonalExp.setVisibility(View.GONE);
                     personalRef.child("weekPer").setValue(0);
                 }
             }
@@ -309,7 +309,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                     personalRef.child("weekApp").setValue(totalAmount);
                 }
                 else {
-                    linearLayoutCharity.setVisibility(View.GONE);
+                    linearLayoutApparel.setVisibility(View.GONE);
                     personalRef.child("weekApp").setValue(0);
                 }
             }
