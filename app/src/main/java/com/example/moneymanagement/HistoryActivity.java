@@ -33,8 +33,9 @@ import java.util.Map;
 public class HistoryActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private BottomNavigationView bottomNavigationView;
-    private RecyclerView recyclerView;
 
+
+    private RecyclerView recyclerView;
     private TodayItemAdapter todayItemsAdapter;
     private List<Data> myDataList;
 
@@ -114,7 +115,24 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
         int months = month + 1;
-        String date = dayOfMonth + "-" + "0" + months + "-" + year;
+        String date="";
+        if(dayOfMonth<10&&months<10)
+        {
+            date =  "0"+dayOfMonth + "-" + "0" + months + "-" + year;
+        }
+        else{
+            if(dayOfMonth<10&&months>10){
+                date =  "0"+dayOfMonth + "-" +months + "-" + year;
+            }
+            else {
+                if(dayOfMonth>10&&months<10){
+                    date =  dayOfMonth + "-" + "0" +months + "-" + year;
+                }
+                else {
+                    date =  dayOfMonth + "-" +  +months + "-" + year;
+                }
+            }
+        }
         Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
