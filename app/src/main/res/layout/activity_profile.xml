@@ -9,14 +9,14 @@
     tools:context=".ProfileActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="162dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
         android:background="@drawable/header_background"
         >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="20dp"
             >
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -35,34 +35,22 @@
                 android:id="@+id/tv_ttk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="25dp"
                 android:text="Tên tài khoản"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/userEmail"
+                android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="46dp"
                 android:text="Vũ Viết Huy"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="23dp"
                 android:textStyle="bold" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="57dp"
-                android:background="#E8A49C"
-                android:src="@drawable/ic_edit" />
         </RelativeLayout>
     </LinearLayout>
     <RelativeLayout
@@ -166,7 +154,7 @@
         </LinearLayout>
     </RelativeLayout>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="62dp"
         android:layout_width="match_parent"
         android:layout_height="75dp">
         <com.google.android.material.bottomappbar.BottomAppBar

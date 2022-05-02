@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView userEmail,logoutBtn;
+    private TextView userName,logoutBtn;
     private BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +25,13 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         logoutBtn=findViewById(R.id.logoutBtn);
-        userEmail=findViewById(R.id.userEmail);
+        userName=findViewById(R.id.userName);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
         bottomNavigationView.setBackground(null);
 
-        userEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+        userName.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override

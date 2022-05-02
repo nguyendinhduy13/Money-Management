@@ -33,8 +33,7 @@ import java.util.Map;
 public class HistoryActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private BottomNavigationView bottomNavigationView;
-
-
+    private int totalAmount = 0;
     private RecyclerView recyclerView;
     private TodayItemAdapter todayItemsAdapter;
     private List<Data> myDataList;
@@ -110,6 +109,8 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         );
         datePickerDialog.show();
+        historyTotalAmountSpent.setText("");
+        totalAmount=0;
     }
 
     @Override
@@ -148,7 +149,7 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
                 todayItemsAdapter.notifyDataSetChanged();
                 recyclerView.setVisibility(View.VISIBLE);
 
-                int totalAmount = 0;
+
                 for (DataSnapshot ds : datasnapshot.getChildren()) {
                     Map<String, Object> map = (Map<String, Object>) ds.getValue();
                     Object total = map.get("amount");
@@ -156,7 +157,7 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
                     totalAmount+=pTotal;
                     if(totalAmount>0){
                         historyTotalAmountSpent.setVisibility(View.VISIBLE);
-                        historyTotalAmountSpent.setText("This day you spent $: "+totalAmount);
+                        historyTotalAmountSpent.setText("This day you spent: "+totalAmount+" $");
                     }
                 }
             }
