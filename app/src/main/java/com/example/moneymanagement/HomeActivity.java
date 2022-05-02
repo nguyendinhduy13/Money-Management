@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,14 +18,17 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +51,7 @@ import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ImageButton image_hoso;
+    private ImageView image_hoso;
 
     private LinearLayout bigestlayout;
 
@@ -233,6 +237,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        showUserInformation();
     }
 
     private void handleFab() {
@@ -332,6 +337,14 @@ public class HomeActivity extends AppCompatActivity {
         getMonthSpendingAmount();
         getSavings();
 
+    }
+    private void showUserInformation(){
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            return;
+        }
+        Uri photoUrl = user.getPhotoUrl();
+        Glide.with(this).load(photoUrl).error(R.drawable.ic_person_24).into(image_hoso);
     }
 
     private void getSavings() {

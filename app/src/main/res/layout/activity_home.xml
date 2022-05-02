@@ -28,7 +28,7 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
             android:src="@drawable/layout_avt"
             android:id="@+id/image_hoso"
             android:layout_width="50dp"

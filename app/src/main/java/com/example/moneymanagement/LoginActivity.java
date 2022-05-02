@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user=mAuth.getCurrentUser();
                 if(user!=null){
-                    Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+                    Intent intent=new Intent(   LoginActivity.this,HomeActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -79,6 +79,8 @@ public class LoginActivity extends AppCompatActivity {
                     progressDialog.setMessage("login in progress");
                     progressDialog.setCanceledOnTouchOutside(false);
                     progressDialog.show();
+
+
 
                     mAuth.signInWithEmailAndPassword(emailString,passwordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
