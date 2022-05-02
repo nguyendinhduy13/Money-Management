@@ -121,7 +121,7 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
             date =  "0"+dayOfMonth + "-" + "0" + months + "-" + year;
         }
         else{
-            if(dayOfMonth<10&&months>10){
+            if(dayOfMonth<10&&months>=10){
                 date =  "0"+dayOfMonth + "-" +months + "-" + year;
             }
             else {
