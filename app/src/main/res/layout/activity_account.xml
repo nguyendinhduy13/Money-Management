@@ -66,23 +66,10 @@
         android:hint="email"
         android:id="@+id/edtEmail"
         />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="password"
-        android:id="@+id/edtPass"
-        android:inputType="textPassword"
-        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cập nhập Profile"
         android:id="@+id/btn_capnhap"/>
-    <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cập nhập Email"
-        android:id="@+id/btn_capnhapemail"/>
 
 </LinearLayout>

@@ -36,8 +36,8 @@ public class AccountActivity extends AppCompatActivity {
 
     private ImageView img_avatar;
     private TextView tv_name;
-    private Button btn_capnhap,btn_capnhapemail;
-    private EditText edtFullName,edtEmail,edtPass;
+    private Button btn_capnhap;
+    private EditText edtFullName,edtEmail;
     private Uri muri;
     private ProgressDialog progressDialog;
 
@@ -70,10 +70,8 @@ public class AccountActivity extends AppCompatActivity {
         img_avatar=findViewById((R.id.img_avatar));
         tv_name=findViewById((R.id.tv_name));
         btn_capnhap=findViewById((R.id.btn_capnhap));
-        btn_capnhapemail=findViewById((R.id.btn_capnhapemail));
         edtFullName=findViewById((R.id.edtFullName));
         edtEmail=findViewById((R.id.edtEmail));
-        edtPass=findViewById((R.id.edtPass));
 
         progressDialog=new ProgressDialog(this);
 
@@ -108,50 +106,8 @@ public class AccountActivity extends AppCompatActivity {
                 onClickUpdateProfile();
             }
         });
-        btn_capnhapemail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClickUpdateEmail();
-            }
-        });
     }
 
-    private void onClickUpdateEmail() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String email=user.getEmail();
-        String pass=edtPass.getText().toString();
-        if(TextUtils.isEmpty(pass)){
-            edtPass.setError("Password is required");
-        }
-        else {
-
-            AuthCredential credential = EmailAuthProvider
-                    .getCredential(email, pass);
-
-            user.reauthenticate(credential)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                        }
-                    });
-
-            String strNewEmail = edtEmail.getText().toString().trim();
-            progressDialog.show();
-
-            user.updateEmail(strNewEmail)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            progressDialog.dismiss();
-
-                            if (task.isSuccessful()) {
-                                Toast.makeText(AccountActivity.this, "Update email success", Toast.LENGTH_SHORT).show();
-                                showUserInformation();
-                            }
-                        }
-                    });
-        }
-    }
 
     private void onClickUpdateProfile() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
