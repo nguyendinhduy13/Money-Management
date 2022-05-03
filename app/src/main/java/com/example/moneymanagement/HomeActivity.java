@@ -131,6 +131,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView.setAdapter(weekSpendingAdapter);
 
         readMonthSpendingItems();
+        showUserInformation();
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override

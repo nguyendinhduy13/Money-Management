@@ -71,6 +71,17 @@ public class AccountActivity extends AppCompatActivity {
         edtFullName=findViewById((R.id.edtFullName));
 
 
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            return;
+        }
+        String name = user.getDisplayName();
+        edtFullName.setText(name);
+        Uri photoUrl = user.getPhotoUrl();
+        Glide.with(this).load(photoUrl).error(R.drawable.ic_person_24).into(img_avatar);
+        muri=photoUrl;
+
+
         initListener();
         showUserInformation();
     }
@@ -140,7 +151,6 @@ public class AccountActivity extends AppCompatActivity {
         Uri photoUrl = user.getPhotoUrl();
 
         tv_name.setText(name);
-        //tv_name.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
         Glide.with(this).load(photoUrl).error(R.drawable.ic_person_24).into(img_avatar);
     }
 }
