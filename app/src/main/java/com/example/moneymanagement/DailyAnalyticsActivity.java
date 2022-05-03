@@ -7,7 +7,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,9 +46,13 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
     private String onlineUserId="";
     private DatabaseReference expensesRef,personalRef;
 
+    private Button btnback;
+
+    private LinearLayout detail_color;
+
     private TextView totalBudgetAmountTextView,analyticsTransportAmount,analyticsFoodAmount,analyticsHouseExpensesAmount,analyticsEntertainmentAmount,analyticsEducationAmount,analyticsCharityAmount,analyticsApparelAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount;
 
-    private RelativeLayout linearLayoutTransport,linearLayoutFood,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation,linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther;
+    private RelativeLayout daily_analytics_header,daily_analytics_container,linearLayoutTransport,linearLayoutFood,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation,linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther;
 
     private AnyChartView anyChartView;
 
@@ -89,6 +95,9 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
         linearLayoutHealth=findViewById(R.id.linearLayoutHealth);
         linearLayoutPersonalExp=findViewById(R.id.linearLayoutPersonalExp);
         linearLayoutOther=findViewById(R.id.linearLayoutOther);
+        detail_color=findViewById(R.id.detail_color);
+        daily_analytics_container=findViewById(R.id.daily_analytics_container);
+        daily_analytics_header=findViewById(R.id.daily_analytics_header);
 
         progress_ratio_transport=findViewById(R.id.progress_ratio_transport);
         progress_ratio_food=findViewById(R.id.progress_ratio_food);
@@ -112,6 +121,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
         status_Image_per=findViewById(R.id.status_Image_per);
         status_Image_oth=findViewById(R.id.status_Image_oth);
         btn_back=findViewById(R.id.back_button);
+        btnback=findViewById(R.id.btn_back);
 
         anyChartView=findViewById(R.id.anyChartView);
 
@@ -144,6 +154,14 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(DailyAnalyticsActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 
     private void getTotalDaySpending() {
@@ -165,10 +183,14 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                         totalAmount +=pTotal;
                     }
                     totalBudgetAmountTextView.setText("Total: $"+totalAmount);
+                    daily_analytics_container.setVisibility(View.GONE);
                 }
                 else {
-                    totalBudgetAmountTextView.setText("You've not spent today");
+                    totalBudgetAmountTextView.setVisibility(View.GONE);
                     anyChartView.setVisibility(View.GONE);
+                    detail_color.setVisibility(View.GONE);
+                    daily_analytics_container.setVisibility(View.VISIBLE);
+                    daily_analytics_header.setVisibility(View.GONE);
                 }
             }
 
