@@ -81,7 +81,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingRight="100dp"
-                android:text="Tài Khoản"
+                android:text="Account"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
@@ -124,12 +124,13 @@
                 android:background="@drawable/ic_forward_figma" />
 
             <TextView
+                android:id="@+id/tv_changepass"
                 android:layout_width="240dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingRight="100dp"
-                android:text="Xuất dữ liệu"
+                android:text="Change password"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
@@ -154,7 +155,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingRight="100dp"
-                android:text="Đăng Xuất"
+                android:text="Log out"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>

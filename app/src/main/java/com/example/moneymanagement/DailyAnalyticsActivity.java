@@ -44,15 +44,15 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
     private String onlineUserId="";
     private DatabaseReference expensesRef,personalRef;
 
-    private TextView monthRatioSpending,monthSpentAmount,totalBudgetAmountTextView,analyticsTransportAmount,analyticsFoodAmount,analyticsHouseExpensesAmount,analyticsEntertainmentAmount,analyticsEducationAmount,analyticsCharityAmount,analyticsApparelAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount;
+    private TextView totalBudgetAmountTextView,analyticsTransportAmount,analyticsFoodAmount,analyticsHouseExpensesAmount,analyticsEntertainmentAmount,analyticsEducationAmount,analyticsCharityAmount,analyticsApparelAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount;
 
-    private RelativeLayout linearLayoutAnalysis,linearLayoutTransport,linearLayoutFood,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation,linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther;
+    private RelativeLayout linearLayoutTransport,linearLayoutFood,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation,linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther;
 
     private AnyChartView anyChartView;
 
     private TextView progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha,progress_ratio_app,progress_ratio_hea,progress_ratio_per,progress_ratio_oth;
 
-    private ImageView btn_back,monthRatioSpending_Image,status_Image_transport,status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth;
+    private ImageView btn_back,status_Image_transport,status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,10 +66,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
         totalBudgetAmountTextView=findViewById(R.id.totalBudgetAmountTextView);
 
-        monthSpentAmount = findViewById(R.id.monthSpentAmount);
-        linearLayoutAnalysis=findViewById(R.id.linearLayoutAnalysis);
-        monthRatioSpending=findViewById(R.id.monthRatioSpending);
-        monthRatioSpending_Image=findViewById(R.id.monthRatioSpending_Image);
+
 
         analyticsTransportAmount=findViewById(R.id.analyticsTransportAmount);
         analyticsFoodAmount=findViewById(R.id.analyticsFoodAmount);
@@ -168,7 +165,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                         totalAmount +=pTotal;
                     }
                     totalBudgetAmountTextView.setText("Total: $"+totalAmount);
-                    monthSpentAmount.setText("Total: "+ totalAmount+"$");
                 }
                 else {
                     totalBudgetAmountTextView.setText("You've not spent today");
@@ -839,17 +835,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                         monthTotalSpentAmountRatio=0;
                     }
 
-                    float monthPercent=(monthTotalSpentAmount/monthTotalSpentAmountRatio)*100;
-                    if(monthPercent<50){
-                        monthRatioSpending.setText(monthPercent+" %"+" of "+monthTotalSpentAmountRatio);
-                        monthRatioSpending_Image.setImageResource(R.drawable.green);
-                    }else if(monthPercent>=50&&monthPercent<100){
-                        monthRatioSpending.setText(monthPercent+" %"+" of "+monthTotalSpentAmountRatio);
-                        monthRatioSpending_Image.setImageResource(R.drawable.brown);
-                    }else {
-                        monthRatioSpending.setText(monthPercent+" %"+" of "+monthTotalSpentAmountRatio);
-                        monthRatioSpending_Image.setImageResource(R.drawable.red);
-                    }
+
 
                     float transportPercent=(traTotal/traRatio)*100;
                     if(transportPercent<50){
