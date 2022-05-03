@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button LoginQn,loginBtn,btn_back;
+    private Button LoginQn,loginBtn,btn_back,btn_forgotpass;
     private EditText email,password;
 
     private FirebaseAuth mAuth;
@@ -50,6 +50,15 @@ public class LoginActivity extends AppCompatActivity {
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
         btn_back=findViewById(R.id.btn_back);
+        btn_forgotpass=findViewById(R.id.btn_forgotpass);
+
+        btn_forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ocClickForgotPassword();
+            }
+        });
+
 
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +117,23 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void ocClickForgotPassword() {
+        progressDialog.show();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String emailAddress = email.getText().toString().trim();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Email sent.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
     @Override
