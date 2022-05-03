@@ -82,18 +82,22 @@ public class BudgetActivity extends AppCompatActivity {
         budgetRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //if(snapshot.exists()&&snapshot.getChildrenCount()>0){
-                int totalamount = 0;
-                for (DataSnapshot snap : snapshot.getChildren()) {
-                    Data data = snap.getValue(Data.class);
+                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                    int totalamount = 0;
+                    for (DataSnapshot snap : snapshot.getChildren()) {
+                        Data data = snap.getValue(Data.class);
 
-                    totalamount += data.getAmount();
+                        totalamount += data.getAmount();
 
-                    String sttotal = String.valueOf("Tổng ngân sách: " + totalamount);
+                        String sttotal = String.valueOf("Tổng ngân sách: " + totalamount);
 
+                        totalBudgetAmountTextView.setText(sttotal);
+                    }
+                }
+                else {
+                    String sttotal = String.valueOf("Tổng ngân sách: " + 0);
                     totalBudgetAmountTextView.setText(sttotal);
                 }
-                // }
             }
 
             @Override
@@ -475,67 +479,41 @@ public class BudgetActivity extends AppCompatActivity {
                     amount.setError("Amount is required");
                     return;
                 }
-                budgetRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        test="";
-                        if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
-                            for (DataSnapshot snap : snapshot.getChildren()) {
-                                Data data = snap.getValue(Data.class);
-                                if (budgetItem.equals(data.getItem())) {
-                                    test=budgetItem;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
-
                 if (budgetItem.equals("Chọn danh mục:"))
                     Toast.makeText(BudgetActivity.this, "Select a valid item", Toast.LENGTH_SHORT).show();
                 else {
-                    if (test.equals("")) {
-                        loader.setMessage("adding a budget item");
-                        loader.setCanceledOnTouchOutside(false);
-                        loader.show();
+                    loader.setMessage("adding a budget item");
+                    loader.setCanceledOnTouchOutside(false);
+                    loader.show();
 
-                        String id = budgetRef.push().getKey();
-                        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                        Calendar cal = Calendar.getInstance();
-                        String date = dateFormat.format(cal.getTime());
+                    String id = budgetRef.push().getKey();
+                    DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                    Calendar cal = Calendar.getInstance();
+                    String date = dateFormat.format(cal.getTime());
 
-                        MutableDateTime epoch = new MutableDateTime();
-                        epoch.setDate(0);
-                        DateTime now = new DateTime();
-                        Weeks weeks = Weeks.weeksBetween(epoch, now);
-                        Months months = Months.monthsBetween(epoch, now);
+                    MutableDateTime epoch = new MutableDateTime();
+                    epoch.setDate(0);
+                    DateTime now = new DateTime();
+                    Weeks weeks = Weeks.weeksBetween(epoch, now);
+                    Months months = Months.monthsBetween(epoch, now);
 
-                        String itemNday = budgetItem + date;
-                        String itemNweek = budgetItem + weeks.getWeeks();
-                        String itemNmonth = budgetItem + months.getMonths();
+                    String itemNday = budgetItem + date;
+                    String itemNweek = budgetItem + weeks.getWeeks();
+                    String itemNmonth = budgetItem + months.getMonths();
 
-                        Data data = new Data(budgetItem, date, id, null, itemNday, itemNweek, itemNmonth, Integer.parseInt(budgetAmount), months.getMonths(), weeks.getWeeks());
+                    Data data = new Data(budgetItem, date, id, null, itemNday, itemNweek, itemNmonth, Integer.parseInt(budgetAmount), months.getMonths(), weeks.getWeeks());
 
-                        budgetRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(BudgetActivity.this, "Budget item added successful", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(BudgetActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                }
-                                loader.dismiss();
+                    budgetRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(BudgetActivity.this, "Budget item added successful", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(BudgetActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
-                        });
-                    } else {
-                        Toast.makeText(BudgetActivity.this, "Exists item", Toast.LENGTH_SHORT).show();
-                    }
+                            loader.dismiss();
+                        }
+                    });
                 }
                 dialog.dismiss();
             }
