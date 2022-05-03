@@ -475,10 +475,10 @@ public class BudgetActivity extends AppCompatActivity {
                     amount.setError("Amount is required");
                     return;
                 }
-
                 budgetRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        test="";
                         if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
                             for (DataSnapshot snap : snapshot.getChildren()) {
                                 Data data = snap.getValue(Data.class);
@@ -535,7 +535,6 @@ public class BudgetActivity extends AppCompatActivity {
                         });
                     } else {
                         Toast.makeText(BudgetActivity.this, "Exists item", Toast.LENGTH_SHORT).show();
-                        test="";
                     }
                 }
                 dialog.dismiss();
