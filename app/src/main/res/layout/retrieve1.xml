@@ -73,7 +73,7 @@
                 <TextView
                     android:id="@+id/note"
                     android:layout_width="110dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="note"
                     android:textColor="#91919F"
                     android:textSize="15sp"

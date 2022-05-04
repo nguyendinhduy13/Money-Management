@@ -65,6 +65,8 @@
                 android:textSize="17dp" />
 
             <EditText
+                android:paddingLeft="15dp"
+                android:id="@+id/edtFullName"
                 android:layout_width="370dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -86,151 +88,17 @@
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
-            <EditText
-                android:layout_width="370dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:background="@drawable/layout_edittext" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Phone Number"
-                android:textColor="@color/black"
-                android:textSize="17dp" />
-
-            <EditText
+                android:id="@+id/tv_email"
+                android:paddingLeft="15dp"
                 android:layout_width="370dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
+                android:background="@drawable/layout_edittext"
+                android:paddingTop="5dp"
                 android:textColor="@color/black"
-                android:background="@drawable/layout_edittext" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Date"
-                android:textColor="@color/black"
-                android:textSize="17dp" />
-            <LinearLayout
-                android:layout_width="370dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/layout_edittext">
-                    <Spinner
-                        android:id="@+id/spinner_day"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        />
-                </LinearLayout>
-                <LinearLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/layout_edittext">
-                    <Spinner
-                        android:id="@+id/spinner_month"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/layout_edittext">
-                    <Spinner
-                        android:id="@+id/spinner_year"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        />
-                </LinearLayout>
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Your phone number"
-                        android:textColor="@color/black"
-                        android:textSize="17dp" />
-
-                    <EditText
-                        android:layout_width="370dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="30dp"
-                        android:textColor="@color/black"
-                        android:background="@drawable/layout_edittext" />
-                </RelativeLayout>
-            </LinearLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Sex"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RadioGroup
-                        android:id="@+id/radio_gr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
-                        <RadioButton
-                            android:id="@+id/radio_male"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="6dp"
-                            android:text="Male"
-                            android:textSize="17dp"
-                            android:onClick="checkButton"/>
-                        <RadioButton
-                            android:id="@+id/radio_female"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Female"
-                            android:textSize="17dp"
-                            android:onClick="checkButton"/>
-                    </RadioGroup>
-                </LinearLayout>
-            </RelativeLayout>
+                android:textSize="18sp" />
         </RelativeLayout>
         <LinearLayout
             android:layout_width="wrap_content"
