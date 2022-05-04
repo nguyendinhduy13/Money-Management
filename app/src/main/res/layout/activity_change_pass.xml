@@ -31,26 +31,27 @@
             android:layout_marginLeft="3dp"
             android:layout_marginTop="10dp"
             >
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Current password:"
                 android:textColor="@color/blue"
-                android:textSize="15dp"
-                />
+                android:textSize="15dp" />
+
             <TextView
+                android:id="@+id/tv_show"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SHOW"
                 android:layout_marginLeft="187dp"
-                />
+                android:text="Show" />
         </LinearLayout>
 
         <EditText
             android:id="@+id/edt_old_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:inputType="textPassword"
             android:hint="Enter current password"/>
     </LinearLayout>
     <LinearLayout
@@ -75,12 +76,14 @@
             android:id="@+id/edt_new_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Enter new password"/>
         <EditText
             android:id="@+id/edt_confirm_new_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:inputType="textPassword"
             android:hint="Confirm new password"/>
     </LinearLayout>
     <com.google.android.material.button.MaterialButton
@@ -89,7 +92,7 @@
         android:layout_height="55dp"
         android:backgroundTint="@color/button"
         android:layout_marginTop="10dp"
-        android:text="Update"
+        android:text="Change"
         android:textSize="17dp"
         android:textAllCaps="false"
         android:textColor="@color/white"
