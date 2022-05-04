@@ -39,30 +39,69 @@ import java.io.IOException;
 
 public class AccountActivity extends AppCompatActivity {
 
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
+    private ImageView img_avatar,img_camera;
+    private EditText edtFullName,edtNumber;
     private String dayy,monthh,yearr;
+    private Spinner spinnerday,spinnermonth,spinneryear;
+    private TextView tv_email;
+    private String a[];
+    private Uri muri;
 
     private Button btn_update,btn_cancel;
+    private ProgressDialog progressDialog;
+
+    final private ActivityResultLauncher<Intent> mActivityResultLauncher=registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode()==RESULT_OK)
+                    {
+                        Intent intent=result.getData();
+                        if(intent==null){
+                            return;
+                        }
+                        Uri uri=intent.getData();
+                        setMuri(uri);
+                        try {
+                            Bitmap bitmap= MediaStore.Images.Media.getBitmap(getContentResolver(),uri) ;
+                            img_avatar.setImageBitmap(bitmap);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-        Spinner spinnerday = findViewById(R.id.spinner_day);
-        Spinner spinnermonth = findViewById(R.id.spinner_month);
-        Spinner spinneryear = findViewById(R.id.spinner_year);
+        img_avatar = findViewById(R.id.img_avatar);
+        img_camera = findViewById(R.id.img_camera);
+        edtFullName = findViewById(R.id.edtFullName);
+        tv_email = findViewById(R.id.tv_email);
+
 
         btn_update = findViewById(R.id.button_update);
         btn_cancel = findViewById(R.id.button_cancel);
 
-        btn_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(AccountActivity.this, dayy+"/"+monthh+"/"+yearr, Toast.LENGTH_SHORT).show();
-            }
-        });
+        progressDialog=new ProgressDialog(this);
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            return;
+        }
+        String email=user.getEmail();
+        String name = user.getDisplayName();
+        tv_email.setText(email);
+        edtFullName.setText(name);
+        Uri photoUrl = user.getPhotoUrl();
+        Glide.with(this).load(photoUrl).error(R.drawable.ic_person_24).into(img_avatar);
+        muri=photoUrl;
+
+        initListener();
+        showUserInformation();
 
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,58 +111,81 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.days, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerday.setAdapter(adapter);
-        spinnerday.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                dayy = adapterView.getItemAtPosition(i).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.months, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnermonth.setAdapter(adapter1);
-        spinnermonth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                monthh = adapterView.getItemAtPosition(i).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.years, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinneryear.setAdapter(adapter2);
-        spinneryear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                yearr = adapterView.getItemAtPosition(i).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        radioGroup = findViewById(R.id.radio_gr);
-    }
-    public  void checkButton(View v)
-    {
-        int radioID = radioGroup.getCheckedRadioButtonId();
-        radioButton = findViewById(radioID);
-        Toast.makeText(this,"Selected: "+radioButton.getText(),Toast.LENGTH_SHORT).show();
     }
 
+    private void initListener() {
+        img_camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickRequestPermission();
+            }
+        });
+        img_avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickRequestPermission();
+            }
+        });
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickUpdateProfile();
+            }
+        });
+    }
+
+
+    private void onClickUpdateProfile() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        progressDialog.show();
+        if(user==null){
+            return;
+        }
+        String strFullName=edtFullName.getText().toString().trim();
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(strFullName)
+                .setPhotoUri(muri)
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(AccountActivity.this, "Update profile success", Toast.LENGTH_SHORT).show();
+                            showUserInformation();
+                        }
+                        Intent intent=new Intent(AccountActivity.this,ProfileActivity.class);
+                        startActivity(intent);
+                    }
+                });
+    }
+
+    private void onClickRequestPermission() {
+        openGallery();
+    }
+
+    public void setMuri(Uri muri) {
+        this.muri = muri;
+    }
+
+    private void openGallery() {
+        Intent intent=new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        mActivityResultLauncher.launch(Intent.createChooser(intent,"Select Picture"));
+    }
+
+    private void showUserInformation(){
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            return;
+        }
+        String name = user.getDisplayName();
+        Uri photoUrl = user.getPhotoUrl();
+
+        edtFullName.setText(name);
+        Glide.with(this).load(photoUrl).error(R.drawable.ic_person_24).into(img_avatar);
+    }
 }

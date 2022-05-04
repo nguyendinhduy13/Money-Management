@@ -125,7 +125,7 @@
 
             <TextView
                 android:id="@+id/tv_changepass"
-                android:layout_width="240dp"
+                android:layout_width="330dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:gravity="center"
