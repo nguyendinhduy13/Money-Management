@@ -39,21 +39,12 @@ import java.io.IOException;
 
 public class AccountActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
-    private String dayy,monthh,yearr,String_date;
-    private String[] date= new String[2];
-=======
     private ImageView img_avatar,img_camera;
-    private EditText edtFullName,edtNumber;
-    private String dayy,monthh,yearr;
-    private Spinner spinnerday,spinnermonth,spinneryear;
+    private EditText edtFullName;
     private TextView tv_email;
     private String a[];
     private Uri muri;
 
->>>>>>> 1ab761d7c02e98b4d1f7f9985d83b9e295bbf207
     private Button btn_update,btn_cancel;
     private ProgressDialog progressDialog;
 
@@ -80,14 +71,6 @@ public class AccountActivity extends AppCompatActivity {
             });
 
 
-    private int getIndex(Spinner spinner, String myString){
-        for (int i=0;i<spinner.getCount();i++){
-            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)){
-                return i;
-            }
-        }
-        return 0;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,18 +85,7 @@ public class AccountActivity extends AppCompatActivity {
         btn_update = findViewById(R.id.button_update);
         btn_cancel = findViewById(R.id.button_cancel);
 
-<<<<<<< HEAD
 
-
-        btn_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String_date = dayy+"/"+monthh+"/"+yearr;
-                date=String_date.split("/");
-                Toast.makeText(AccountActivity.this,String_date, Toast.LENGTH_SHORT).show();
-            }
-        });
-=======
         progressDialog=new ProgressDialog(this);
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         if(user==null){
@@ -130,15 +102,11 @@ public class AccountActivity extends AppCompatActivity {
         initListener();
         showUserInformation();
 
->>>>>>> 1ab761d7c02e98b4d1f7f9985d83b9e295bbf207
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                spinnerday.setSelection(getIndex(spinnerday,date[0]));
-                spinnermonth.setSelection(getIndex(spinnermonth,date[1]));
-                spinneryear.setSelection(getIndex(spinneryear,date[2]));
-//                Intent intent = new Intent(AccountActivity.this,ProfileActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(AccountActivity.this,ProfileActivity.class);
+                startActivity(intent);
             }
         });
 
