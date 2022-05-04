@@ -7,24 +7,93 @@
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".ChangePassActivity">
-
-    <EditText
-        android:id="@+id/edt_old_password"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Old Password"/>
-
-    <EditText
-        android:id="@+id/edt_new_password"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="17dp"
+            android:text="Password strength is more important than password change frequency"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="New Password"/>
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current password:"
+                android:textColor="@color/blue"
+                android:textSize="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SHOW"
+                android:layout_marginLeft="187dp"
+                />
+        </LinearLayout>
 
-    <Button
+        <EditText
+            android:id="@+id/edt_old_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Enter current password"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New password:"
+                android:textColor="@color/blue"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/edt_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter new password"/>
+        <EditText
+            android:id="@+id/edt_confirm_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Confirm new password"/>
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_change_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Change Password"
-        android:layout_marginTop="20dp"/>
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/button"
+        android:layout_marginTop="10dp"
+        android:text="Update"
+        android:textSize="17dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        app:cornerRadius="20dp" />
 
 </LinearLayout>
