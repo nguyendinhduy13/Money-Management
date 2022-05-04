@@ -3,7 +3,10 @@ package com.example.moneymanagement;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -26,7 +29,7 @@ public class ChangePassActivity extends AppCompatActivity {
     private Button btn_change_password;
     private ProgressDialog progressDialog;
     private TextView tv_show;
-    private Boolean test=false;
+    private Boolean test = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,21 +47,20 @@ public class ChangePassActivity extends AppCompatActivity {
         tv_show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(test){
+                if (test) {
                     edt_new_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     edt_confirm_new_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     edt_old_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
 
                     tv_show.setText("Show");
-                    test=false;
-                }
-                else {
+                    test = false;
+                } else {
                     edt_new_password.setInputType(InputType.TYPE_CLASS_TEXT);
                     edt_confirm_new_password.setInputType(InputType.TYPE_CLASS_TEXT);
                     edt_old_password.setInputType(InputType.TYPE_CLASS_TEXT);
                     tv_show.setText("Hide");
-                    test=true;
+                    test = true;
                 }
             }
         });
@@ -108,9 +110,29 @@ public class ChangePassActivity extends AppCompatActivity {
                                             progressDialog.dismiss();
                                             if (task.isSuccessful()) {
                                                 Toast.makeText(ChangePassActivity.this, "User password updated", Toast.LENGTH_SHORT).show();
+                                                new AlertDialog.Builder(ChangePassActivity.this)
+                                                        .setTitle("Money Management App")
+                                                        .setMessage("Do you want to exit?")
+                                                        .setCancelable(false)
+                                                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                                FirebaseAuth.getInstance().signOut();
+                                                                Intent intent=new Intent(ChangePassActivity.this,LoginActivity.class);
+                                                                startActivity(intent);
+                                                                finish();
+                                                            }
+                                                        })
+                                                        .setNegativeButton("No",null)
+                                                        .show();
+                                            }
+                                            else {
+                                                Toast.makeText(ChangePassActivity.this, "Update failed", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
+
+
                         }
                     }
 
