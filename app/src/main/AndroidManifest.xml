@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyManagement">
         <activity
+            android:name=".MonthSpendingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChangePassActivity"
             android:exported="false" />
         <activity

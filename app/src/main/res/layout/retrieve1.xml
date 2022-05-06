@@ -12,19 +12,20 @@
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@drawable/botron_item1"
         >
+
         <LinearLayout
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/botron_item">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/house" />
@@ -59,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="60dp"
                     android:text="$0"
+                    android:layout_gravity="center"
                     android:textColor="#FD3C4A"
                     android:textSize="18sp"
                     android:textStyle="bold" />

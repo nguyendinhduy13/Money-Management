@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class WeekSpendingActivity extends AppCompatActivity {
+public class MonthSpendingActivity extends AppCompatActivity {
 
     private TextView totalWeekAmountTextView;
     private ProgressBar progressBar;
@@ -63,19 +62,20 @@ public class WeekSpendingActivity extends AppCompatActivity {
         onlineUserId = mAuth.getCurrentUser().getUid();
 
         myDataList = new ArrayList<>();
-        weekSpendingAdapter = new WeekSpendingAdapter(WeekSpendingActivity.this, myDataList);
+        weekSpendingAdapter = new WeekSpendingAdapter(MonthSpendingActivity.this, myDataList);
         recyclerView.setAdapter(weekSpendingAdapter);
+
         ImageView icon_arrow_back = findViewById(R.id.arrow_back);
         TextView title = findViewById(R.id.txv_title);
 
         icon_arrow_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(WeekSpendingActivity.this,HomeActivity.class);
+                Intent intent=new Intent(MonthSpendingActivity.this,HomeActivity.class);
                 startActivity(intent);
             }}
         );
-        title.setText("Week's Spending");
+        title.setText("Month's Spending");
 
         if(getIntent().getExtras()!=null){
             type=getIntent().getStringExtra("type");

@@ -56,7 +56,8 @@
             android:text="Số dư tài khoản"
             android:textAlignment="center"
             android:textSize="18dp"
-            android:textColor="#91919F"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
             />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_sodu"
@@ -154,6 +155,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             >
             <TableRow>
                 <com.google.android.material.textview.MaterialTextView
@@ -228,33 +230,6 @@
         android:textSize="18dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnhistory"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="Tìm kiếm"
-        android:textSize="10dp"
-        app:cornerRadius="10dp"
-        android:backgroundTint="@color/purple"
-        android:textColor="@color/purple_700"
-        android:layout_marginLeft="290dp"
-        android:textStyle="bold"
-        android:layout_marginTop="-32dp"
-        />
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnhoso"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="Hồ sơ"
-        android:textSize="10dp"
-        app:cornerRadius="10dp"
-        android:backgroundTint="@color/purple"
-        android:textColor="@color/purple_700"
-        android:layout_marginLeft="170dp"
-        android:textStyle="bold"
-        android:layout_marginTop="-40dp"
         />
     <RelativeLayout
         android:layout_width="match_parent"

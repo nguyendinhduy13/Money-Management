@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -65,15 +67,15 @@ public class TodaySpendingActivity extends AppCompatActivity {
         totalAmountSpentOn=findViewById(R.id.totalAmountSpentOn);
         progressBar=findViewById(R.id.progressBar);
 
+        ImageView icon_arrow_back = findViewById(R.id.arrow_back);
+        TextView title = findViewById(R.id.txv_title);
 
         fab=findViewById(R.id.fab);
         loader=new ProgressDialog(this);
 
-
         mAuth=FirebaseAuth.getInstance();
         onlineUserId=mAuth.getCurrentUser().getUid();
         expensesRef= FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
-
 
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
@@ -87,6 +89,14 @@ public class TodaySpendingActivity extends AppCompatActivity {
 
         readItems();
 
+        icon_arrow_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TodaySpendingActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }}
+        );
+        title.setText("Today's Spending");
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

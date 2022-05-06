@@ -49,7 +49,9 @@
         android:id="@+id/detail_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/boarder_black"
+        android:background="@drawable/layout_bg_item"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -63,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="L 50 %"
+            android:text="L 50%"
             android:layout_gravity="center_vertical"
             android:textSize="10sp"
             android:textColor="#000"
@@ -79,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text=" G=50 % L=100 %"
+            android:text=" 50 - 100 %"
             android:layout_gravity="center_vertical"
             android:textSize="10sp"
             android:textColor="#000"
@@ -114,12 +116,14 @@
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_item"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -128,6 +132,7 @@
                         android:text="Transport"
                         android:textColor="#000"
                         android:textSize="18sp"
+                        android:layout_marginLeft="10dp"
                         android:textStyle="bold" />
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -137,6 +142,7 @@
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:text="00.00"
+                            android:layout_marginLeft="10dp"
                             android:textColor="#000"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -156,6 +162,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:text="Status"
+                            android:layout_marginLeft="10dp"
                             android:textColor="#000"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -176,6 +183,7 @@
                 android:id="@+id/linearLayoutFood"
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
+                android:background="@drawable/layout_bg_item"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -183,32 +191,35 @@
                     android:id="@+id/linearLayout1"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Food"
+                        android:layout_marginLeft="10dp"
                         android:textColor="#000"
                         android:textStyle="bold"
                         android:textSize="18sp"
                         />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsFoodAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_food"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsFoodAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_food"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -220,6 +231,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:text="Status"
+                            android:layout_marginLeft="10dp"
                             android:textSize="12sp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_food"
@@ -243,6 +255,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutFoodHouse"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -251,6 +264,7 @@
                     android:id="@+id/linearLayout2"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
@@ -258,27 +272,29 @@
                         android:text="House Expenses"
                         android:textColor="#000"
                         android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
                         android:textSize="18sp"
                         />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsHouseExpensesAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_house"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        />
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsHouseExpensesAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_house"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1"
+                            />
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -290,6 +306,7 @@
                             android:layout_weight="2"
                             android:text="Status"
                             android:textSize="12sp"
+                            android:layout_marginLeft="10dp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_house"
                             />
@@ -300,6 +317,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@+id/linearLayout2"
@@ -308,6 +326,7 @@
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/linearLayoutEntertainment"
+                android:background="@drawable/layout_bg_item"
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -317,6 +336,7 @@
                     android:id="@+id/linearLayout3"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
@@ -324,27 +344,29 @@
                         android:text="Entertainment"
                         android:textColor="#000"
                         android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
                         android:textSize="18sp"
                         />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsEntertainmentAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_ent"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        />
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsEntertainmentAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_ent"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1"
+                            />
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -354,6 +376,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
+                            android:layout_marginLeft="10dp"
                             android:text="Status"
                             android:textSize="12sp"
                             android:textColor="#000"
@@ -378,6 +401,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutEducation"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -386,27 +410,30 @@
                     android:id="@+id/linearLayout4"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Education"
                         android:textColor="#000"
+                        android:layout_marginLeft="10dp"
                         android:textStyle="bold"
                         android:textSize="18sp"
                         />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsEducationAmount"
-                        />
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsEducationAmount"
+                            />
                         <ImageView
                             android:id="@+id/status_Image_edu"
                             android:layout_width="0dp"
@@ -424,6 +451,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:text="Status"
+                            android:layout_marginLeft="10dp"
                             android:textSize="12sp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_edu"
@@ -447,6 +475,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutCharity"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -454,6 +483,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -462,27 +492,29 @@
                         android:layout_height="wrap_content"
                         android:text="Charity"
                         android:textColor="#000"
+                        android:layout_marginLeft="10dp"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/analyticsCharityAmount"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textColor="#000"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/analyticsCharityAmount"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#000"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/status_Image_cha"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1" />
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/status_Image_cha"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1" />
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -494,6 +526,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:text="Status"
+                            android:layout_marginLeft="10dp"
                             android:textColor="#000"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -515,6 +548,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutApparel"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -523,6 +557,7 @@
                     android:id="@+id/linearLayout6"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
@@ -530,26 +565,28 @@
                         android:text="Apparel and Services"
                         android:textColor="#000"
                         android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
                         android:textSize="18sp"
                         />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsApparelAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_app"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        />
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsApparelAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_app"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1"
+                            />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -561,6 +598,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:text="Status"
+                            android:layout_marginLeft="10dp"
                             android:textSize="12sp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_app"
@@ -584,6 +622,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutHealth"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -592,11 +631,13 @@
                     android:id="@+id/linearLayout7"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Health"
+                        android:layout_marginLeft="10dp"
                         android:textColor="#000"
                         android:textStyle="bold"
                         android:textSize="18sp"
@@ -604,22 +645,23 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsHealthAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_hea"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsHealthAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_hea"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1"
+                            />
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -631,6 +673,7 @@
                             android:layout_weight="2"
                             android:text="Status"
                             android:textSize="12sp"
+                            android:layout_marginLeft="10dp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_hea"
                             />
@@ -653,6 +696,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutPersonalExp"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -661,6 +705,7 @@
                     android:id="@+id/linearLayout8"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
@@ -668,27 +713,29 @@
                         android:text="Personal Expenses"
                         android:textColor="#000"
                         android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
                         android:textSize="18sp"
                         />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsPersonalExpensesAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_per"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsPersonalExpensesAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_per"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1"
+                            />
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -700,6 +747,7 @@
                             android:layout_weight="2"
                             android:text="Status"
                             android:textSize="12sp"
+                            android:layout_marginLeft="10dp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_per"
                             />
@@ -722,6 +770,7 @@
             <RelativeLayout
                 android:id="@+id/linearLayoutOther"
                 android:layout_margin="5dp"
+                android:background="@drawable/layout_bg_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -730,34 +779,37 @@
                     android:id="@+id/linearLayout9"
                     android:orientation="vertical"
                     android:layout_width="300dp"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Other"
                         android:textColor="#000"
+                        android:layout_marginLeft="10dp"
                         android:textStyle="bold"
                         android:textSize="18sp"
                         />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:text="00.00"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:id="@+id/analyticsOtherAmount"
-                        />
-                    <ImageView
-                        android:id="@+id/status_Image_oth"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="00.00"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:id="@+id/analyticsOtherAmount"
+                            />
+                        <ImageView
+                            android:id="@+id/status_Image_oth"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="1"
+                            />
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -768,6 +820,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:text="Status"
+                            android:layout_marginLeft="10dp"
                             android:textSize="12sp"
                             android:textColor="#000"
                             android:id="@+id/progress_ratio_oth"
@@ -788,6 +841,7 @@
                     android:src="@drawable/other" />
 
             </RelativeLayout>
+
         </LinearLayout>
     </ScrollView>
     <RelativeLayout

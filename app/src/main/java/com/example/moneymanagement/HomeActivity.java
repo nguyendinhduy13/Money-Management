@@ -56,7 +56,6 @@ public class HomeActivity extends AppCompatActivity {
     private LinearLayout bigestlayout;
 
     private TextView tv_homnay,tv_thunhap,tv_week,tv_month,tv_chiphi,moneytoday,moneyweek,moneymonth,tv_sodu;
-    private Button btnhistory,btnhoso;
 
     private BottomNavigationView bottomNavigationView;
 
@@ -92,8 +91,6 @@ public class HomeActivity extends AppCompatActivity {
         moneyweek = findViewById(R.id.moneyweek);
         moneymonth = findViewById(R.id.moneymonth);
         tv_sodu = findViewById(R.id.tv_sodu);
-        btnhistory = findViewById(R.id.btnhistory);
-        btnhoso = findViewById(R.id.btnhoso);
         image_hoso = findViewById(R.id.image_hoso);
 
         bigestlayout = findViewById(R.id.bigestlayout);
@@ -212,22 +209,8 @@ public class HomeActivity extends AppCompatActivity {
         tv_month.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,WeekSpendingActivity.class);
+                Intent intent = new Intent(HomeActivity.this,MonthSpendingActivity.class);
                 intent.putExtra("type","month");
-                startActivity(intent);
-            }
-        });
-        btnhistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,HistoryActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnhoso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
                 startActivity(intent);
             }
         });
