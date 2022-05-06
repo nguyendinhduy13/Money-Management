@@ -37,8 +37,8 @@
             android:background="@drawable/layout_bolinearcolor" />
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="-50dp"
             android:layout_marginLeft="340dp"
             android:background="@drawable/notifiaction"
@@ -56,7 +56,7 @@
             android:text="Số dư tài khoản"
             android:textAlignment="center"
             android:textSize="18dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:textColor="#000"
             />
         <com.google.android.material.textview.MaterialTextView
@@ -275,7 +275,6 @@
             android:visibility="gone"
             android:src="@drawable/ic_arrow_upward_24"
             app:maxImageSize="30dp" />
-
     </RelativeLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

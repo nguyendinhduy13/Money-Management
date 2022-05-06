@@ -110,7 +110,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="34dp"
         >
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"

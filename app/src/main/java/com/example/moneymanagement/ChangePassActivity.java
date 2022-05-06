@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,6 +71,17 @@ public class ChangePassActivity extends AppCompatActivity {
                 onClickChangePassword();
             }
         });
+        ImageView icon_arrow_back = findViewById(R.id.arrow_back);
+        TextView title = findViewById(R.id.txv_title);
+
+        icon_arrow_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ChangePassActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }}
+        );
+        title.setText("Change Password");
     }
 
     private void onClickChangePassword() {

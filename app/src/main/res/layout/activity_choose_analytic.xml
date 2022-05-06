@@ -167,8 +167,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
-        android:layout_height="100dp">
+        android:layout_marginTop="62dp"
+        android:layout_height="75dp">
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
