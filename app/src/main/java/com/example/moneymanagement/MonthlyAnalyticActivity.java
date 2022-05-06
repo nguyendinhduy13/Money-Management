@@ -109,7 +109,6 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
         status_Image_hea=findViewById(R.id.status_Image_hea);
         status_Image_per=findViewById(R.id.status_Image_per);
         status_Image_oth=findViewById(R.id.status_Image_oth);
-        btn_back=findViewById(R.id.back_button);
 
         anyChartView=findViewById(R.id.anyChartView);
 
@@ -135,13 +134,17 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
         new java.util.Timer().schedule(
                 task,500
         );
-        btn_back.setOnClickListener(new View.OnClickListener() {
+        ImageView icon_arrow_back = findViewById(R.id.arrow_back);
+        TextView title = findViewById(R.id.txv_title);
+
+        icon_arrow_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent=new Intent(MonthlyAnalyticActivity.this,ChooseAnalyticActivity.class);
                 startActivity(intent);
-            }
-        });
+            }}
+        );
+        title.setText("Month Analytics");
     }
     private void getTotalWeekSpending() {
         MutableDateTime epoch=new MutableDateTime();

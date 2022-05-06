@@ -6,30 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MonthlyAnalyticActivity">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/header_background">
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/arrow_left" />
-        <TextView
-            android:id="@+id/header_title"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Month"
-            android:textColor="#ffffff"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+    <include layout="@layout/toolbar" />
     <com.anychart.AnyChartView
         android:id="@+id/anyChartView"
         android:layout_width="match_parent"

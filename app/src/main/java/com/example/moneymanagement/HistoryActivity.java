@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,8 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
 
     private Button search;
     private TextView historyTotalAmountSpent;
+
+    private LinearLayout historyLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,7 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
                 showDatePickerDialog();
             }
         });
+        historyLayout = findViewById(R.id.historyList);
     }
 
     private void showDatePickerDialog() {
@@ -167,7 +171,6 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
                 Toast.makeText(HistoryActivity.this,error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }
 

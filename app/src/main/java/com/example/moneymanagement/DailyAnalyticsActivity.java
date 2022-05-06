@@ -43,87 +43,83 @@ import java.util.TimerTask;
 public class DailyAnalyticsActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private String onlineUserId="";
-    private DatabaseReference expensesRef,personalRef;
+    private String onlineUserId = "";
+    private DatabaseReference expensesRef, personalRef;
 
     private Button btnback;
 
     private LinearLayout detail_color;
 
-    private TextView totalBudgetAmountTextView,analyticsTransportAmount,analyticsFoodAmount,analyticsHouseExpensesAmount,analyticsEntertainmentAmount,analyticsEducationAmount,analyticsCharityAmount,analyticsApparelAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount;
+    private TextView totalBudgetAmountTextView, analyticsTransportAmount, analyticsFoodAmount, analyticsHouseExpensesAmount, analyticsEntertainmentAmount, analyticsEducationAmount, analyticsCharityAmount, analyticsApparelAmount, analyticsHealthAmount, analyticsPersonalExpensesAmount, analyticsOtherAmount;
 
-    private RelativeLayout daily_analytics_header,daily_analytics_container,linearLayoutTransport,linearLayoutFood,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation,linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther;
+    private RelativeLayout daily_analytics_header, daily_analytics_container, linearLayoutTransport, linearLayoutFood, linearLayoutFoodHouse, linearLayoutEntertainment, linearLayoutEducation, linearLayoutCharity, linearLayoutApparel, linearLayoutHealth, linearLayoutPersonalExp, linearLayoutOther;
 
     private AnyChartView anyChartView;
 
-    private TextView progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha,progress_ratio_app,progress_ratio_hea,progress_ratio_per,progress_ratio_oth;
+    private TextView progress_ratio_transport, progress_ratio_food, progress_ratio_house, progress_ratio_ent, progress_ratio_edu, progress_ratio_cha, progress_ratio_app, progress_ratio_hea, progress_ratio_per, progress_ratio_oth;
 
-    private ImageView btn_back,status_Image_transport,status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth;
+    private ImageView btn_back, status_Image_transport, status_Image_food, status_Image_house, status_Image_ent, status_Image_edu, status_Image_cha, status_Image_app, status_Image_hea, status_Image_per, status_Image_oth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_analytics);
 
-        mAuth=FirebaseAuth.getInstance();
-        onlineUserId=mAuth.getCurrentUser().getUid();
-        expensesRef= FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
-        personalRef=FirebaseDatabase.getInstance().getReference("personal").child(onlineUserId);
+        mAuth = FirebaseAuth.getInstance();
+        onlineUserId = mAuth.getCurrentUser().getUid();
+        expensesRef = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
+        personalRef = FirebaseDatabase.getInstance().getReference("personal").child(onlineUserId);
 
-        totalBudgetAmountTextView=findViewById(R.id.totalBudgetAmountTextView);
+        totalBudgetAmountTextView = findViewById(R.id.totalBudgetAmountTextView);
 
 
+        analyticsTransportAmount = findViewById(R.id.analyticsTransportAmount);
+        analyticsFoodAmount = findViewById(R.id.analyticsFoodAmount);
+        analyticsHouseExpensesAmount = findViewById(R.id.analyticsHouseExpensesAmount);
+        analyticsEntertainmentAmount = findViewById(R.id.analyticsEntertainmentAmount);
+        analyticsEducationAmount = findViewById(R.id.analyticsEducationAmount);
+        analyticsCharityAmount = findViewById(R.id.analyticsCharityAmount);
+        analyticsApparelAmount = findViewById(R.id.analyticsApparelAmount);
+        analyticsHealthAmount = findViewById(R.id.analyticsHealthAmount);
+        analyticsPersonalExpensesAmount = findViewById(R.id.analyticsPersonalExpensesAmount);
+        analyticsOtherAmount = findViewById(R.id.analyticsOtherAmount);
 
-        analyticsTransportAmount=findViewById(R.id.analyticsTransportAmount);
-        analyticsFoodAmount=findViewById(R.id.analyticsFoodAmount);
-        analyticsHouseExpensesAmount=findViewById(R.id.analyticsHouseExpensesAmount);
-        analyticsEntertainmentAmount=findViewById(R.id.analyticsEntertainmentAmount);
-        analyticsEducationAmount=findViewById(R.id.analyticsEducationAmount);
-        analyticsCharityAmount=findViewById(R.id.analyticsCharityAmount);
-        analyticsApparelAmount=findViewById(R.id.analyticsApparelAmount);
-        analyticsHealthAmount=findViewById(R.id.analyticsHealthAmount);
-        analyticsPersonalExpensesAmount=findViewById(R.id.analyticsPersonalExpensesAmount);
-        analyticsOtherAmount=findViewById(R.id.analyticsOtherAmount);
+        linearLayoutTransport = findViewById(R.id.linearLayoutTransport);
+        linearLayoutFood = findViewById(R.id.linearLayoutFood);
+        linearLayoutFoodHouse = findViewById(R.id.linearLayoutFoodHouse);
+        linearLayoutEntertainment = findViewById(R.id.linearLayoutEntertainment);
+        linearLayoutEducation = findViewById(R.id.linearLayoutEducation);
+        linearLayoutCharity = findViewById(R.id.linearLayoutCharity);
+        linearLayoutApparel = findViewById(R.id.linearLayoutApparel);
+        linearLayoutHealth = findViewById(R.id.linearLayoutHealth);
+        linearLayoutPersonalExp = findViewById(R.id.linearLayoutPersonalExp);
+        linearLayoutOther = findViewById(R.id.linearLayoutOther);
+        detail_color = findViewById(R.id.detail_color);
+        daily_analytics_container = findViewById(R.id.daily_analytics_container);
 
-        linearLayoutTransport=findViewById(R.id.linearLayoutTransport);
-        linearLayoutFood=findViewById(R.id.linearLayoutFood);
-        linearLayoutFoodHouse=findViewById(R.id.linearLayoutFoodHouse);
-        linearLayoutEntertainment=findViewById(R.id.linearLayoutEntertainment);
-        linearLayoutEducation=findViewById(R.id.linearLayoutEducation);
-        linearLayoutCharity=findViewById(R.id.linearLayoutCharity);
-        linearLayoutApparel=findViewById(R.id.linearLayoutApparel);
-        linearLayoutHealth=findViewById(R.id.linearLayoutHealth);
-        linearLayoutPersonalExp=findViewById(R.id.linearLayoutPersonalExp);
-        linearLayoutOther=findViewById(R.id.linearLayoutOther);
-        detail_color=findViewById(R.id.detail_color);
-        daily_analytics_container=findViewById(R.id.daily_analytics_container);
-        daily_analytics_header=findViewById(R.id.daily_analytics_header);
+        progress_ratio_transport = findViewById(R.id.progress_ratio_transport);
+        progress_ratio_food = findViewById(R.id.progress_ratio_food);
+        progress_ratio_house = findViewById(R.id.progress_ratio_house);
+        progress_ratio_ent = findViewById(R.id.progress_ratio_ent);
+        progress_ratio_edu = findViewById(R.id.progress_ratio_edu);
+        progress_ratio_cha = findViewById(R.id.progress_ratio_cha);
+        progress_ratio_app = findViewById(R.id.progress_ratio_app);
+        progress_ratio_hea = findViewById(R.id.progress_ratio_hea);
+        progress_ratio_per = findViewById(R.id.progress_ratio_per);
+        progress_ratio_oth = findViewById(R.id.progress_ratio_oth);
 
-        progress_ratio_transport=findViewById(R.id.progress_ratio_transport);
-        progress_ratio_food=findViewById(R.id.progress_ratio_food);
-        progress_ratio_house=findViewById(R.id.progress_ratio_house);
-        progress_ratio_ent=findViewById(R.id.progress_ratio_ent);
-        progress_ratio_edu=findViewById(R.id.progress_ratio_edu);
-        progress_ratio_cha=findViewById(R.id.progress_ratio_cha);
-        progress_ratio_app=findViewById(R.id.progress_ratio_app);
-        progress_ratio_hea=findViewById(R.id.progress_ratio_hea);
-        progress_ratio_per=findViewById(R.id.progress_ratio_per);
-        progress_ratio_oth=findViewById(R.id.progress_ratio_oth);
+        status_Image_transport = findViewById(R.id.status_Image_transport);
+        status_Image_food = findViewById(R.id.status_Image_food);
+        status_Image_house = findViewById(R.id.status_Image_house);
+        status_Image_ent = findViewById(R.id.status_Image_ent);
+        status_Image_edu = findViewById(R.id.status_Image_edu);
+        status_Image_cha = findViewById(R.id.status_Image_cha);
+        status_Image_app = findViewById(R.id.status_Image_app);
+        status_Image_hea = findViewById(R.id.status_Image_hea);
+        status_Image_per = findViewById(R.id.status_Image_per);
+        status_Image_oth = findViewById(R.id.status_Image_oth);
 
-        status_Image_transport=findViewById(R.id.status_Image_transport);
-        status_Image_food=findViewById(R.id.status_Image_food);
-        status_Image_house=findViewById(R.id.status_Image_house);
-        status_Image_ent=findViewById(R.id.status_Image_ent);
-        status_Image_edu=findViewById(R.id.status_Image_edu);
-        status_Image_cha=findViewById(R.id.status_Image_cha);
-        status_Image_app=findViewById(R.id.status_Image_app);
-        status_Image_hea=findViewById(R.id.status_Image_hea);
-        status_Image_per=findViewById(R.id.status_Image_per);
-        status_Image_oth=findViewById(R.id.status_Image_oth);
-        btn_back=findViewById(R.id.back_button);
-        btnback=findViewById(R.id.btn_back);
-
-        anyChartView=findViewById(R.id.anyChartView);
+        anyChartView = findViewById(R.id.anyChartView);
 
         getTotalWeekTransportExpenses();
         getTotalWeekFoodExpenses();
@@ -137,7 +133,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
         getTotalWeekOtherExpenses();
         getTotalDaySpending();
 
-        TimerTask task= new TimerTask() {
+        TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 loadGraph();
@@ -145,47 +141,42 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
             }
         };
         new java.util.Timer().schedule(
-                task,500
+                task, 500
         );
-        btn_back.setOnClickListener(new View.OnClickListener() {
+        ImageView icon_arrow_back = findViewById(R.id.arrow_back);
+        TextView title = findViewById(R.id.txv_title);
+
+        icon_arrow_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent=new Intent(DailyAnalyticsActivity.this,ChooseAnalyticActivity.class);
                 startActivity(intent);
-            }
-        });
-        btnback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(DailyAnalyticsActivity.this,HomeActivity.class);
-                startActivity(intent);
-            }
-
-        });
+            }}
+        );
+        title.setText("Daily Analytics");
     }
 
     private void getTotalDaySpending() {
 
-        DateFormat dateFormat=new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal=Calendar.getInstance();
-        String date=dateFormat.format(cal.getTime());
-        DatabaseReference reference=FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
-        Query query=reference.orderByChild("date").equalTo(date);
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = Calendar.getInstance();
+        String date = dateFormat.format(cal.getTime());
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
+        Query query = reference.orderByChild("date").equalTo(date);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()&&snapshot.getChildrenCount()>0){
-                    int totalAmount=0;
-                    for(DataSnapshot ds:snapshot.getChildren()){
-                        Map<String,Object> map=(Map<String, Object>) ds.getValue();
-                        Object total=map.get("amount");
-                        int pTotal=Integer.parseInt(String.valueOf(total));
-                        totalAmount +=pTotal;
+                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                    int totalAmount = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        int pTotal = Integer.parseInt(String.valueOf(total));
+                        totalAmount += pTotal;
                     }
-                    totalBudgetAmountTextView.setText("Total: $"+totalAmount);
+                    totalBudgetAmountTextView.setText("Total: $" + totalAmount);
                     daily_analytics_container.setVisibility(View.GONE);
-                }
-                else {
+                } else {
                     totalBudgetAmountTextView.setVisibility(View.GONE);
                     anyChartView.setVisibility(View.GONE);
                     detail_color.setVisibility(View.GONE);
