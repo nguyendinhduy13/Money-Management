@@ -25,13 +25,25 @@
 
 
     <EditText
+        android:id="@+id/name"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Họ và tên"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_round"/>
+    <EditText
         android:id="@+id/email"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="20dp"
         android:layout_marginTop="20dp"
@@ -42,8 +54,32 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Mật khẩu"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_round"/>
+    <EditText
+        android:id="@+id/numberphone"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Số điện thoại"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_round"/>
+    <EditText
+        android:id="@+id/birthday"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:ems="10"
+        android:hint="Ngày sinh"
+        android:inputType="textPersonName"
         android:minHeight="48dp"
         android:padding="20dp"
         android:layout_marginTop="20dp"
@@ -58,47 +94,27 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="75dp"
         android:layout_marginTop="-40dp"
-
+        android:textSize="14dp"
         android:text="Bạn đồng ý với Điều khoản dịch vụ và chính sách quyền riêng tư">
 
     </TextView>
+
     <Button
         android:id="@+id/registerBtn"
-        android:layout_marginTop="30dp"
         android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/edit_round"
-        android:text="Đăng ký"
-        android:layout_height="wrap_content"></Button>
+        android:text="Đăng ký"></Button>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hoặc"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="180dp"></TextView>
 
-    <ImageButton
-        android:id="@+id/dkgg"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:paddingTop="0dp"
-        android:layout_marginLeft="40dp"
-        android:adjustViewBounds="true"
-        android:background="@color/white"
-        android:clickable="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/lggg"></ImageButton>
-
-    <ImageButton
-        android:id="@+id/dkfb"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="40dp"
-        android:adjustViewBounds="true"
-        android:background="@color/white"
-        android:clickable="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/dkfb"
-        tools:ignore="SpeakableTextPresentCheck"></ImageButton>
     <Button
         android:id="@+id/registerQn"
         android:layout_width="wrap_content"
